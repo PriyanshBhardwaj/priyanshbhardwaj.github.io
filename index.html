@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Priyansh Bhardwaj - ML Engineer</title>
+<meta name="description" content="Senior ML Engineer specialising in RAG systems, vector search, and production GenAI. Open to EU and UK roles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Syne:wght@300;400;500&family=Fira+Code:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#0b0d10; --ink2:#12151a; --ink3:#181c23;
+  --rule:rgba(255,255,255,.06); --rule2:rgba(255,255,255,.11);
+  --cream:#ede9e3; --mid:#7d7972; --low:#3d3b38;
+  --amber:#c49040; --amber-hi:#dea95e; --amber-lo:rgba(196,144,64,.1);
+  --green:#4db87a;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--cream);font-family:'Syne',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;cursor:none}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--ink)}::-webkit-scrollbar-thumb{background:var(--amber)}
+#cur{position:fixed;z-index:9999;pointer-events:none;width:9px;height:9px;border-radius:50%;background:var(--amber);transform:translate(-50%,-50%);mix-blend-mode:difference;transition:width .18s,height .18s}
+#cur-r{position:fixed;z-index:9998;pointer-events:none;width:34px;height:34px;border-radius:50%;border:1px solid rgba(196,144,64,.45);transform:translate(-50%,-50%);transition:left .12s,top .12s,width .28s,height .28s}
+body:has(a:hover) #cur,body:has(button:hover) #cur{width:14px;height:14px}
+body:has(a:hover) #cur-r{width:52px;height:52px;border-color:var(--amber)}
+#bgc{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.28}
+.topnav{position:fixed;top:0;left:0;right:0;z-index:500;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 52px;border-bottom:1px solid var(--rule);background:rgba(11,13,16,.9);backdrop-filter:blur(20px)}
+.n-mark{font-family:'Fira Code',monospace;font-size:.7rem;letter-spacing:.14em;color:var(--amber);text-decoration:none;text-transform:uppercase}
+.n-links{display:flex;gap:34px;list-style:none}
+.n-links a{font-family:'Fira Code',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .2s;position:relative}
+.n-links a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .24s}
+.n-links a:hover::after,.n-links a.on::after{transform:scaleX(1)}
+.n-links a:hover,.n-links a.on{color:var(--cream)}
+.n-right{display:flex;align-items:center;gap:12px}
+.n-hire{font-family:'Fira Code',monospace;font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);background:var(--amber);padding:7px 20px;border:none;cursor:pointer;transition:background .2s}
+.n-hire:hover{background:var(--amber-hi)}
+.n-ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.n-ham span{display:block;width:22px;height:1.5px;background:var(--cream);transition:all .25s}
+.n-ham.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.n-ham.open span:nth-child(2){opacity:0}
+.n-ham.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.drawer{display:none;position:fixed;top:58px;left:0;right:0;background:#0d0f13;backdrop-filter:blur(20px);border-bottom:2px solid var(--rule2);z-index:499;padding:10px 24px;flex-direction:column}
+.drawer.open{display:flex}
+.drawer a{font-family:'Fira Code',monospace;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);text-decoration:none;padding:15px 0;border-bottom:1px solid var(--rule2);transition:color .2s;cursor:pointer}
+.drawer a:last-child{border-bottom:none;color:var(--amber)}
+.drawer a:hover{color:var(--amber)}
+#hero{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 52px;border-bottom:1px solid var(--rule)}
+#hero>*{position:relative;z-index:1}
+.h-glow{position:absolute!important;z-index:0!important;top:50%;left:50%;transform:translate(-50%,-54%);width:800px;height:440px;background:radial-gradient(ellipse,rgba(196,144,64,.07) 0%,transparent 68%);pointer-events:none}
+.h-eye{font-family:'Fira Code',monospace;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);margin-bottom:26px;display:flex;align-items:center;gap:16px;justify-content:center;opacity:0;animation:fup .8s .2s forwards}
+.h-eye i{display:inline-block;width:30px;height:1px;background:var(--amber);opacity:.5;font-style:normal}
+.h-name1{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(5rem,13vw,11.5rem);letter-spacing:.04em;line-height:.9;color:var(--cream);text-shadow:0 2px 0 rgba(196,144,64,.28),0 6px 28px rgba(0,0,0,.7);opacity:0;animation:fup .9s .32s forwards;margin-bottom:2px}
+.h-name2{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(5rem,13vw,11.5rem);letter-spacing:.04em;line-height:.9;color:transparent;-webkit-text-stroke:1px rgba(237,233,227,.2);opacity:0;animation:fup .9s .44s forwards;margin-bottom:30px}
+.h-divider{width:1px;height:52px;background:linear-gradient(to bottom,var(--amber),transparent);margin:0 auto 28px;opacity:0;animation:fup .6s .58s forwards}
+.h-summary{max-width:620px;margin:0 auto 36px;font-size:1.02rem;color:var(--mid);line-height:1.9;font-weight:300;opacity:0;animation:fup .8s .68s forwards}
+.h-summary strong{color:var(--cream);font-weight:500}
+.h-band{display:flex;border:1px solid var(--rule2);margin:0 auto 40px;max-width:880px;width:100%;opacity:0;animation:fup .7s .82s forwards}
+.h-bi{padding:18px 28px;border-right:1px solid var(--rule2);text-align:left;flex:1;min-width:0}
+.h-bi:last-child{border-right:none}
+.h-bi-lbl{font-family:'Fira Code',monospace;font-size:.58rem;letter-spacing:.13em;text-transform:uppercase;color:var(--amber);margin-bottom:5px}
+.h-bi-val{font-size:.84rem;color:var(--cream);line-height:1.5}
+.h-bi-val small{color:var(--mid);font-size:.78rem}
+.dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);margin-right:6px;animation:glw 2.5s ease-in-out infinite;vertical-align:middle}
+@keyframes glw{0%,100%{box-shadow:0 0 0 0 rgba(77,184,122,.5)}50%{box-shadow:0 0 0 5px rgba(77,184,122,0)}}
+.h-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fup .7s .96s forwards}
+.btn{font-family:'Fira Code',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:11px 26px;transition:all .22s;display:inline-block;cursor:pointer}
+.btn-s{background:var(--amber);color:var(--ink);border:none}
+.btn-s:hover{background:var(--amber-hi);transform:translateY(-2px)}
+.btn-g{border:1px solid var(--rule2);color:var(--mid);background:transparent}
+.btn-g:hover{border-color:var(--amber);color:var(--amber);transform:translateY(-2px)}
+.h-scroll{display:flex;flex-direction:column;align-items:center;gap:7px;margin-top:44px;opacity:0;animation:fup .6s 1.2s forwards;transition:opacity .5s}
+.h-scroll.gone{opacity:0!important;pointer-events:none}
+.h-scroll-lbl{font-family:'Fira Code',monospace;font-size:.58rem;letter-spacing:.18em;color:var(--low);text-transform:uppercase}
+.h-scroll-ln{width:1px;height:38px;background:linear-gradient(to bottom,var(--low),transparent);animation:sp 2s ease-in-out infinite}
+@keyframes sp{0%,100%{opacity:.3;transform:scaleY(.7)}50%{opacity:1;transform:scaleY(1)}}
+.sec{position:relative;z-index:1;padding:108px 0;border-bottom:1px solid var(--rule)}
+.wrap{max-width:1100px;margin:0 auto;padding:0 52px}
+.sec-hd{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:68px;padding-bottom:24px;border-bottom:1px solid var(--rule)}
+.sec-num{font-family:'Fira Code',monospace;font-size:.63rem;letter-spacing:.14em;color:var(--amber);margin-bottom:7px}
+h2.st{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2rem,3.2vw,2.75rem);font-weight:400;color:var(--cream);line-height:1.1}
+h2.st em{font-style:italic;color:var(--amber-hi)}
+.sec-hd-r{font-size:.86rem;color:var(--mid);max-width:340px;text-align:right;line-height:1.72}
+.timeline{position:relative;padding-left:28px}
+.timeline::before{content:'';position:absolute;left:0;top:10px;bottom:0;width:1px;background:linear-gradient(to bottom,var(--amber),rgba(196,144,64,.15))}
+.tl-item{position:relative;padding:0 0 68px 48px}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:-7px;top:10px;width:15px;height:15px;border-radius:50%;background:var(--ink);border:1.5px solid var(--amber)}
+.tl-dot.live{background:var(--amber)}
+.tl-dot.live::after{content:'';position:absolute;inset:3px;border-radius:50%;background:var(--ink)}
+.tl-meta{display:flex;align-items:center;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+.tl-per{font-family:'Fira Code',monospace;font-size:.66rem;color:var(--low);letter-spacing:.08em}
+.tl-tag{font-family:'Fira Code',monospace;font-size:.57rem;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border:1px solid var(--amber);color:var(--amber)}
+.tl-tag.cur{background:var(--amber);color:var(--ink);border:none}
+.tl-co{font-family:'Playfair Display',Georgia,serif;font-size:1.55rem;color:var(--cream);font-weight:400;margin-bottom:3px}
+.tl-role{font-family:'Fira Code',monospace;font-size:.67rem;color:var(--amber);letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+.tl-lead{font-size:.9rem;color:var(--mid);line-height:1.85;margin-bottom:20px;max-width:700px}
+.tl-pts{list-style:none;margin-bottom:22px;max-width:740px}
+.tl-pts li{font-size:.87rem;color:var(--mid);padding:7px 0 7px 20px;position:relative;line-height:1.72;border-bottom:1px solid rgba(255,255,255,.025)}
+.tl-pts li:last-child{border-bottom:none}
+.tl-pts li::before{content:'';position:absolute;left:0;top:18px;width:8px;height:1px;background:var(--amber)}
+.tl-pts li strong{color:var(--cream);font-weight:500}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tg{font-family:'Fira Code',monospace;font-size:.59rem;letter-spacing:.07em;color:var(--low);border:1px solid var(--rule2);padding:3px 9px;transition:all .2s}
+.tg:hover{color:var(--amber);border-color:rgba(196,144,64,.3)}
+.pfeat{display:grid;grid-template-columns:1.1fr .9fr;border:1px solid var(--rule2);margin-bottom:2px;transition:border-color .3s}
+.pfeat:hover{border-color:rgba(196,144,64,.35)}
+.pf-l{padding:50px 46px;border-right:1px solid var(--rule2)}
+.pf-r{padding:50px 40px;background:var(--ink2)}
+.pnum{font-family:'Fira Code',monospace;font-size:.6rem;color:var(--low);letter-spacing:.12em;margin-bottom:18px}
+h3.ph{font-family:'Playfair Display',Georgia,serif;font-size:1.85rem;font-weight:400;color:var(--cream);line-height:1.18;margin-bottom:16px}
+h3.ph em{font-style:italic;color:var(--amber-hi)}
+.pb{font-size:.88rem;color:var(--mid);line-height:1.82;margin-bottom:24px}
+.pcall{background:var(--amber-lo);border-left:2px solid var(--amber);padding:13px 17px;margin-bottom:24px;font-size:.86rem;color:var(--cream);line-height:1.72}
+.pcall span{color:var(--amber-hi);font-weight:500}
+.psl{font-family:'Fira Code',monospace;font-size:.58rem;letter-spacing:.14em;color:var(--low);text-transform:uppercase;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:'Fira Code',monospace;font-size:.6rem;letter-spacing:.06em;color:var(--low);border:1px solid var(--rule2);padding:4px 10px;transition:all .2s}
+.chip:hover{color:var(--amber);border-color:rgba(196,144,64,.3)}
+.albl{font-family:'Fira Code',monospace;font-size:.58rem;letter-spacing:.14em;color:var(--amber);text-transform:uppercase;margin-bottom:16px}
+.ai{padding:13px 0;border-bottom:1px solid var(--rule);font-size:.84rem;line-height:1.68}
+.ai:last-child{border-bottom:none}
+.at{color:var(--cream);font-weight:500;margin-bottom:3px;font-size:.83rem}
+.ad{color:var(--mid)}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.pc2{background:var(--ink2);border:1px solid var(--rule);padding:32px 28px;transition:background .25s,border-color .25s,transform .25s;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.pc2::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.pc2:hover{background:var(--ink3);border-color:var(--rule2);transform:translateY(-4px)}
+.pc2:hover::before{transform:scaleX(1)}
+.pc2 h3.ph{font-size:1.05rem;margin-bottom:10px}
+.pc2 .pb{font-size:.83rem;flex:1;margin-bottom:16px}
+.res{font-family:'Fira Code',monospace;font-size:.66rem;color:var(--amber);margin-bottom:14px;letter-spacing:.03em}
+.sk-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px}
+.sk-hd{font-family:'Fira Code',monospace;font-size:.6rem;letter-spacing:.14em;color:var(--amber);text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.sk-hd::after{content:'';flex:1;height:1px;background:var(--rule)}
+.sk-row{margin-bottom:14px}
+.sk-top{display:flex;justify-content:space-between;margin-bottom:7px}
+.sk-n{font-size:.83rem;color:var(--mid)}
+.sk-lv{font-family:'Fira Code',monospace;font-size:.66rem;color:var(--amber)}
+.sk-tr{height:2px;background:rgba(255,255,255,.05)}
+.sk-fi{height:100%;background:linear-gradient(90deg,var(--amber),var(--amber-hi));width:0;transition:width 1.5s cubic-bezier(.4,0,.2,1);position:relative}
+.sk-fi::after{content:'';position:absolute;right:-1px;top:-2px;width:5px;height:5px;border-radius:50%;background:var(--amber-hi)}
+.cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:8px}
+.cert{border:1px solid var(--rule);padding:11px 14px;font-size:.78rem;color:var(--mid);line-height:1.4;transition:border-color .2s,background .2s;cursor:pointer}
+.cert:hover{border-color:var(--amber);background:rgba(196,144,64,.05)}
+.cert-iss{font-family:'Fira Code',monospace;font-size:.58rem;color:var(--amber);margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em}
+.edu-box{margin-top:48px;padding:28px 32px;border:1px solid var(--rule);background:var(--ink2)}
+.edu-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px}
+.edu-lbl{font-family:'Fira Code',monospace;font-size:.58rem;letter-spacing:.14em;color:var(--amber);text-transform:uppercase;margin-bottom:8px}
+.edu-blk p{font-size:.85rem;color:var(--mid);line-height:1.65}
+.edu-blk strong{color:var(--cream);font-weight:500}
+.wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.ac{background:var(--ink2);border:1px solid var(--rule);padding:34px 28px;transition:background .25s,border-color .25s;display:flex;flex-direction:column}
+.ac:hover{background:var(--ink3);border-color:var(--rule2)}
+.a-tag{font-family:'Fira Code',monospace;font-size:.58rem;letter-spacing:.1em;color:var(--amber);text-transform:uppercase;margin-bottom:12px}
+.a-ttl{font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;color:var(--cream);font-weight:400;margin-bottom:10px;line-height:1.32}
+.a-exc{font-size:.83rem;color:var(--mid);line-height:1.74;flex:1;margin-bottom:20px}
+.a-lnk{font-family:'Fira Code',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:gap .2s;margin-top:auto}
+.a-lnk:hover{gap:13px}
+#contact{border-bottom:none}
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:76px}
+.ct-h{font-family:'Playfair Display',Georgia,serif;font-size:1.85rem;font-weight:400;color:var(--cream);margin-bottom:14px;line-height:1.2}
+.ct-h em{font-style:italic;color:var(--amber-hi)}
+.ct-p{font-size:.88rem;color:var(--mid);line-height:1.85;margin-bottom:32px}
+.ct-list{list-style:none}
+.ct-i{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--rule)}
+.ct-i:first-child{border-top:1px solid var(--rule)}
+.ct-ico{font-family:'Fira Code',monospace;font-size:.64rem;color:var(--amber);width:20px;flex-shrink:0}
+.ct-txt{font-size:.84rem;color:var(--mid)}
+.ct-txt a{color:var(--mid);text-decoration:none;transition:color .2s}
+.ct-txt a:hover{color:var(--cream)}
+.cf{display:flex;flex-direction:column;gap:13px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.fg{display:flex;flex-direction:column;gap:5px}
+.flbl{font-family:'Fira Code',monospace;font-size:.58rem;letter-spacing:.1em;color:var(--low);text-transform:uppercase}
+.fin,.fta{background:var(--ink2);border:1px solid var(--rule2);color:var(--cream);font-family:'Syne',sans-serif;font-size:.87rem;font-weight:300;padding:11px 14px;outline:none;transition:border-color .2s;width:100%}
+.fin:focus,.fta:focus{border-color:rgba(196,144,64,.5)}
+.fin::placeholder,.fta::placeholder{color:var(--low)}
+.fta{resize:vertical;min-height:108px}
+.fbtn{font-family:'Fira Code',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);background:var(--amber);padding:12px 28px;border:none;cursor:pointer;transition:background .2s;align-self:flex-start}
+.fbtn:hover{background:var(--amber-hi)}
+.fmsg{display:none;font-family:'Fira Code',monospace;font-size:.72rem;padding:10px 0}
+footer{z-index:1;position:relative;padding:24px 52px;border-top:1px solid var(--rule);display:flex;align-items:center;justify-content:space-between}
+.fc{font-family:'Fira Code',monospace;font-size:.61rem;color:var(--low);letter-spacing:.08em}
+.flinks{display:flex;gap:22px}
+.flinks a{font-family:'Fira Code',monospace;font-size:.61rem;color:var(--low);text-decoration:none;letter-spacing:.08em;transition:color .2s}
+.flinks a:hover{color:var(--amber)}
+@keyframes fup{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .68s ease,transform .68s ease}
+.rv.vs{opacity:1;transform:none}
+.rv.d1{transition-delay:.09s}.rv.d2{transition-delay:.18s}.rv.d3{transition-delay:.27s}
+@media(max-width:900px){
+  body{cursor:auto}#cur,#cur-r{display:none}
+  .topnav{padding:0 20px}.n-links{display:none}.n-ham{display:flex}
+  .wrap{padding:0 20px}.sec{padding:72px 0}
+  .h-band{flex-direction:column}
+  .h-bi{border-right:none;border-bottom:1px solid var(--rule2);padding:14px 18px}
+  .h-bi:last-child{border-bottom:none}
+  .sec-hd{flex-direction:column;gap:10px}.sec-hd-r{text-align:left;max-width:100%}
+  .pfeat{grid-template-columns:1fr}.pf-l{border-right:none;border-bottom:1px solid var(--rule2)}
+  .pgrid{grid-template-columns:1fr 1fr}.sk-wrap{grid-template-columns:1fr}
+  .wgrid{grid-template-columns:1fr 1fr}.ct-grid{grid-template-columns:1fr;gap:44px}
+  .frow{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:13px;padding:22px 24px}
+  .cert-grid{grid-template-columns:1fr 1fr}.edu-grid{grid-template-columns:1fr 1fr}
+  .timeline{padding-left:18px}.tl-item{padding-left:30px}
+}
+@media(max-width:600px){
+  #hero{padding:70px 16px 52px}
+  .h-name1,.h-name2{font-size:clamp(3rem,17vw,5rem)}
+  .h-summary{font-size:.9rem}.h-bi{padding:11px 14px}
+  .h-ctas{gap:8px}.btn{padding:9px 16px;font-size:.62rem}
+  .sec{padding:52px 0}.wrap{padding:0 16px}
+  h2.st{font-size:1.7rem}.tl-co{font-size:1.2rem}
+  .tl-lead,.tl-pts li{font-size:.83rem}
+  .pgrid{grid-template-columns:1fr}.wgrid{grid-template-columns:1fr}
+  .cert-grid{grid-template-columns:1fr}.edu-grid{grid-template-columns:1fr}
+  .pf-l{padding:26px 18px}.pf-r{padding:22px 18px}h3.ph{font-size:1.4rem}
+  footer{flex-direction:column;gap:13px;text-align:center;padding:22px 16px}
+  .flinks{flex-wrap:wrap;justify-content:center;gap:14px}
+}
+</style>
+</head>
+<body>
+<div id="cur"></div>
+<div id="cur-r"></div>
+<canvas id="bgc"></canvas>
+
+<header class="topnav">
+  <a href="#hero" class="n-mark">PB / ML Engineer</a>
+  <ul class="n-links">
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#writing">Writing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="n-right">
+    <button class="n-ham" id="ham" onclick="toggleNav()"><span></span><span></span><span></span></button>
+    <button class="n-hire" onclick="doEmail()">Get in Touch</button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <a href="#experience" onclick="closeNav()">Experience</a>
+  <a href="#projects" onclick="closeNav()">Projects</a>
+  <a href="#skills" onclick="closeNav()">Skills</a>
+  <a href="#writing" onclick="closeNav()">Writing</a>
+  <a href="#contact" onclick="closeNav()">Contact</a>
+  <a onclick="doEmail();closeNav()">Get in Touch</a>
+</div>
+
+<section id="hero">
+  <div class="h-glow"></div>
+  <div class="h-eye"><i></i>Machine Learning Engineer &middot; Applied AI<i></i></div>
+  <div class="h-name1">PRIYANSH</div>
+  <div class="h-name2">BHARDWAJ</div>
+  <div class="h-divider"></div>
+  <p class="h-summary">I build <strong>production AI systems</strong> &mdash; RAG pipelines, recommendation engines, and GenAI infrastructure &mdash; that go beyond proof-of-concept into reliable, measurable, scalable software. <span id="exp-inline"></span> across <strong>fintech, retail analytics, and healthcare</strong>, working at the boundary between ML research and engineering discipline.</p>
+  <div class="h-band">
+    <div class="h-bi">
+      <div class="h-bi-lbl">Current Role</div>
+      <div class="h-bi-val"><span class="dot"></span>Senior Applied Data Scientist<br><small>Dunnhumby &middot; Apr 2025 &ndash; Present &middot; <span id="dun-tenure"></span></small></div>
+    </div>
+    <div class="h-bi">
+      <div class="h-bi-lbl">Total Experience</div>
+      <div class="h-bi-val"><span id="exp-band"></span><br><small>ML Engineering &middot; GenAI &middot; MLOps</small></div>
+    </div>
+    <div class="h-bi">
+      <div class="h-bi-lbl">Domain Expertise</div>
+      <div class="h-bi-val">RAG &middot; Vector Search &middot; LLMs<br><small>Recommendation &middot; Summarisation</small></div>
+    </div>
+    <div class="h-bi">
+      <div class="h-bi-lbl">Work Eligibility</div>
+      <div class="h-bi-val">Open to EU &amp; UK roles<br><small>Visa sponsorship required &middot; Relocation ready</small></div>
+    </div>
+  </div>
+  <div class="h-ctas">
+    <a href="#projects" class="btn btn-s">View Projects</a>
+    <a href="#experience" class="btn btn-g">Experience</a>
+    <a href="https://github.com/PriyanshBhardwaj" target="_blank" class="btn btn-g">GitHub</a>
+    <a href="https://linkedin.com/in/priyansh-bhardwaj-25964317a" target="_blank" class="btn btn-g">LinkedIn</a>
+  </div>
+  <div class="h-scroll" id="scrollHint"><div class="h-scroll-lbl">Scroll</div><div class="h-scroll-ln"></div></div>
+</section>
+
+<section id="experience" class="sec">
+  <div class="wrap">
+    <div class="sec-hd rv">
+      <div><div class="sec-num">01 &mdash; Experience</div><h2 class="st">Career <em>Timeline</em></h2></div>
+      <div class="sec-hd-r">Three roles across fintech, retail analytics, and independent product engineering &mdash; each ending with shipped, monitored systems in production.</div>
+    </div>
+    <div class="timeline">
+      <div class="tl-item rv">
+        <div class="tl-dot live"></div>
+        <div class="tl-meta"><span class="tl-per">Apr 2025 &mdash; Present &middot; <span id="dun-tl"></span></span><span class="tl-tag cur">Current</span></div>
+        <div class="tl-co">Dunnhumby</div>
+        <div class="tl-role">Senior Applied Data Scientist</div>
+        <p class="tl-lead">Dunnhumby is a global customer data science company serving major retailers including Tesco, Kroger, and Meijer. My remit covers the full pipeline from raw data and LLM architecture to production deployment and ongoing evaluation. Enterprise-scale work: large internal knowledge bases, multiple teams consuming AI outputs, and reliability expectations that make experimentation-mode thinking inadequate.</p>
+        <ul class="tl-pts">
+          <li>Architected an enterprise <strong>RAG system</strong> for natural language access to internal knowledge bases &mdash; 92% answer accuracy, hallucination rate below 5%, 60% reduction in manual search effort.</li>
+          <li>Designed the <strong>microservices AI architecture</strong> &mdash; distributed FastAPI services, Docker + Kubernetes, horizontal autoscaling. Retrieval and generation optimisation reduced end-to-end latency by 10%.</li>
+          <li>Built <strong>evaluation infrastructure</strong> measuring context relevance, faithfulness, and response quality continuously &mdash; automated metrics with alerting on degradation.</li>
+          <li>Productionised <strong>AI summarisation and structured query agents</strong> &mdash; reducing manual processing workload by 65%.</li>
+          <li>Led <strong>cross-functional collaboration</strong> between data engineering and product teams to transition prototypes into stable, documented production systems.</li>
+        </ul>
+        <div class="tags"><span class="tg">RAG</span><span class="tg">FastAPI</span><span class="tg">Kubernetes</span><span class="tg">Docker</span><span class="tg">LLMs</span><span class="tg">RAGAS</span><span class="tg">Evaluation Pipelines</span><span class="tg">AI Agents</span><span class="tg">Microservices</span></div>
+      </div>
+      <div class="tl-item rv d1">
+        <div class="tl-dot"></div>
+        <div class="tl-meta"><span class="tl-per">Sep 2022 &mdash; Mar 2025 &middot; 2 yrs 7 mos</span><span class="tl-tag">Independent</span></div>
+        <div class="tl-co">Independent Product Development</div>
+        <div class="tl-role">AI / ML Engineer</div>
+        <p class="tl-lead">Built and shipped three end-to-end AI products independently across healthcare, legal, and fintech &mdash; each with a deliberate evaluation methodology before claiming results. Self-directed accountability to hard metrics without the safety net of a team to validate assumptions.</p>
+        <ul class="tl-pts">
+          <li>Built a <strong>production RAG system for healthcare retrieval</strong> &mdash; 95% precision via RAGAS evaluation, hallucination monitoring, BioBERT embeddings.</li>
+          <li>Developed an <strong>embedding-based recommendation engine</strong> using two-tower architecture &mdash; ROC-AUC from 0.82 to 0.90+ through better embeddings and hard negative sampling.</li>
+          <li>Delivered a <strong>legal summarisation platform</strong> with 92% clause preservation &mdash; map-reduce LLM summarisation with cosine similarity evaluation.</li>
+          <li>Built full <strong>MLOps stack</strong>: CI/CD via GitHub Actions, drift detection, Prometheus and Grafana dashboards.</li>
+        </ul>
+        <div class="tags"><span class="tg">FAISS</span><span class="tg">Pinecone</span><span class="tg">Weaviate</span><span class="tg">LangChain</span><span class="tg">LlamaIndex</span><span class="tg">BioBERT</span><span class="tg">MLflow</span><span class="tg">Prometheus</span></div>
+      </div>
+      <div class="tl-item rv d2">
+        <div class="tl-dot"></div>
+        <div class="tl-meta"><span class="tl-per">Sep 2021 &mdash; Jun 2022 &middot; 10 mos</span><span class="tl-tag">First Role</span></div>
+        <div class="tl-co">Signzy</div>
+        <div class="tl-role">AI Engineer</div>
+        <p class="tl-lead">Signzy provides AI-powered KYC and financial onboarding infrastructure to banks and fintechs. First engineering role on live transaction pipelines where production errors have direct financial consequences.</p>
+        <ul class="tl-pts">
+          <li>Built <strong>fraud detection models</strong> on live financial pipelines &mdash; 40% reduction in manual review, 40% cut in false positives.</li>
+          <li>Automated model training and deployment workflows &mdash; 80% reduction in operational overhead, 30% in processing time.</li>
+          <li>Contributed to <strong>scalable ML infrastructure</strong> for automated orchestration and production monitoring.</li>
+        </ul>
+        <div class="tags"><span class="tg">Fraud Detection</span><span class="tg">ML Pipelines</span><span class="tg">Automation</span><span class="tg">Fintech</span><span class="tg">KYC</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="sec">
+  <div class="wrap">
+    <div class="sec-hd rv">
+      <div><div class="sec-num">02 &mdash; Projects</div><h2 class="st">Selected <em>Work</em></h2></div>
+      <div class="sec-hd-r">Five production systems across healthcare, fintech, and legal. Every cited metric comes from an evaluation pipeline &mdash; not a back-of-envelope estimate.</div>
+    </div>
+    <div class="pfeat rv">
+      <div class="pf-l">
+        <div class="pnum">01 &mdash; Featured &middot; Healthcare Domain</div>
+        <h3 class="ph">Healthcare RAG<br><em>Retrieval System</em></h3>
+        <p class="pb">Natural language querying over thousands of medical documents, returning cited, verifiable answers grounded in the source corpus. Core challenge: eliminating hallucination without sacrificing coverage or latency.</p>
+        <div class="pcall">Achieved <span>95% summarisation precision</span> and hallucination rate below <span>5%</span> &mdash; RAGAS evaluation on a stratified 200-query test set supplemented by human annotation.</div>
+        <div class="psl">Stack</div>
+        <div class="chips"><span class="chip">Python</span><span class="chip">LangChain</span><span class="chip">Weaviate</span><span class="chip">FAISS</span><span class="chip">BioBERT</span><span class="chip">FastAPI</span><span class="chip">RAGAS</span><span class="chip">Docker</span><span class="chip">Prometheus</span></div>
+      </div>
+      <div class="pf-r">
+        <div class="albl">Architecture Decisions That Mattered</div>
+        <div class="ai"><div class="at">Parent-child chunking</div><div class="ad">256-token child for precision, 1024-token parent to LLM. Context Precision: 0.71 to 0.87.</div></div>
+        <div class="ai"><div class="at">BioBERT domain embeddings</div><div class="ad">Myocardial infarction and heart attack are near-identical vectors. General models treat them as distinct &mdash; dangerous in clinical retrieval.</div></div>
+        <div class="ai"><div class="at">Two-stage re-ranking</div><div class="ad">Bi-encoder retrieves top-50, cross-encoder re-ranks to top-5. ~100ms cost eliminates irrelevant context that causes hallucination.</div></div>
+        <div class="ai"><div class="at">NLI faithfulness scoring</div><div class="ad">Every response claim scored against retrieved chunks via NLI before delivery. Per-query monitoring, not sampling.</div></div>
+        <div class="ai"><div class="at">Hybrid BM25 + dense search</div><div class="ad">Drug names and ICD codes fail on semantic search alone. Both modes required for clinical language coverage.</div></div>
+      </div>
+    </div>
+    <div class="pgrid rv d1">
+      <div class="pc2">
+        <div class="pnum">02</div>
+        <h3 class="ph">Embedding-Based<br><em>Recommendation Engine</em></h3>
+        <p class="pb">Two-tower dense retrieval for fintech &mdash; users and items as dense vectors via ANN. Solved cold-start where collaborative filtering failed. Redis-cached embeddings, sub-50ms P99 latency.</p>
+        <div class="res">ROC-AUC 0.82 to 0.90+ &middot; Sub-50ms P99</div>
+        <div class="chips"><span class="chip">FAISS</span><span class="chip">Pinecone</span><span class="chip">Sentence Transformers</span><span class="chip">Redis</span><span class="chip">FastAPI</span></div>
+      </div>
+      <div class="pc2">
+        <div class="pnum">03</div>
+        <h3 class="ph">Legal Document<br><em>Summarisation Platform</em></h3>
+        <p class="pb">Map-reduce LLM summarisation with clause-level semantic evaluation. A missed clause is a liability. Preservation measured via cosine similarity, calibrated on 50 human-labelled examples.</p>
+        <div class="res">92% clause preservation &middot; Containerised</div>
+        <div class="chips"><span class="chip">LangChain</span><span class="chip">Sentence Transformers</span><span class="chip">FastAPI</span><span class="chip">Docker</span></div>
+      </div>
+      <div class="pc2">
+        <div class="pnum">04&ndash;05</div>
+        <h3 class="ph">Time-Series<br><em>Forecasting Systems</em></h3>
+        <p class="pb">Stock price forecasting with Kafka streaming and Kubernetes autoscaling; AQI prediction covering 300+ Indian locations with real-time dashboards. Both cross-validated and deployed.</p>
+        <div class="res">92% CV accuracy &middot; 94% accuracy (300+ locations)</div>
+        <div class="chips"><span class="chip">XGBoost</span><span class="chip">Kafka</span><span class="chip">Kubernetes</span><span class="chip">Streamlit</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="sec">
+  <div class="wrap">
+    <div class="sec-hd rv">
+      <div><div class="sec-num">03 &mdash; Skills</div><h2 class="st">Technical <em>Depth</em></h2></div>
+      <div class="sec-hd-r">Visualised by actual usage depth in production systems &mdash; not self-assessed familiarity from tutorials.</div>
+    </div>
+    <div class="sk-wrap rv">
+      <div>
+        <div class="sk-hd">Languages</div>
+        <div class="sk-row"><div class="sk-top"><span class="sk-n">Python</span><span class="sk-lv">Expert</span></div><div class="sk-tr"><div class="sk-fi" data-w="96"></div></div></div>
+        <div class="sk-row"><div class="sk-top"><span class="sk-n">SQL</span><span class="sk-lv">Advanced</span></div><div class="sk-tr"><div class="sk-fi" data-w="82"></div></div></div>
+        <div class="sk-row"><div class="sk-top"><span class="sk-n">Bash / Shell</span><span class="sk-lv">Proficient</span></div><div class="sk-tr"><div class="sk-fi" data-w="68"></div></div></div>
+        <div class="sk-hd" style="margin-top:24px">AI / ML</div>
+        <div class="sk-row"><div class="sk-top"><span class="sk-n">RAG Systems &amp; LLMs</span><span class="sk-lv">Expert</span></div><div class="sk-tr"><div class="sk-fi" data-w="95"></div></div></div>
+        <div class="sk-row"><div class="sk-top"><span class="sk-n">Vector Search &mdash; FAISS, Pinecone, Weaviate</span><span class="sk-lv">Expert</span></div><div class="sk-tr"><div class="sk-fi" data-w="92"></div></div></div>
+        <div class="sk-row"><div class="sk-top"><span class="sk-n">NLP &amp; Text Embeddings</span><span class="sk-lv">Expert</span></div><div class="sk-tr"><div class="sk-fi" data-w="90"></div></div></div>
+        <div class="sk-row"><div class="sk-top"><span class="sk-n">ML Evaluation &amp; RAGAS</span><span class="sk-lv">Expert</span></div><div class="sk-tr"><div class="sk-fi" data-w="90"></div></div></div>
+        <div class="sk-row"><div class="sk-top"><span class="sk-n">Classical ML &mdash; XGBoost, Sklearn</span><span class="sk-lv">Advanced</span></div><div class="sk-tr"><div class="sk-fi" data-w="84"></div></div></div>
+        <div class="sk-row"><div class="sk-top"><span class="sk-n">Recommendation Systems</span><span class="sk-lv">Advanced</span></div><div class="sk-tr"><div class="sk-fi" data-w="82"></div></div></div>
+        <div class="sk-row"><div class="sk-top"><span class="sk-n">Deep Learning &mdash; PyTorch, TensorFlow</span><span class="sk-lv">Advanced</span></div><div class="sk-tr"><div class="sk-fi" data-w="78"></div></div></div>
+        <div class="sk-hd" style="margin-top:24px">MLOps &amp; Infrastructure</div>
+        <div class="sk-row"><div class="sk-top"><span class="sk-n">FastAPI &amp; REST API Design</span><span class="sk-lv">Expert</span></div><div class="sk-tr"><div class="sk-fi" data-w="93"></div></div></div>
+        <div class="sk-row"><div class="sk-top"><span class="sk-n">Docker &amp; Kubernetes</span><span class="sk-lv">Advanced</span></div><div class="sk-tr"><div class="sk-fi" data-w="83"></div></div></div>
+        <div class="sk-row"><div class="sk-top"><span class="sk-n">CI/CD, GitHub Actions</span><span class="sk-lv">Advanced</span></div><div class="sk-tr"><div class="sk-fi" data-w="78"></div></div></div>
+        <div class="sk-row"><div class="sk-top"><span class="sk-n">Prometheus, Grafana, MLflow</span><span class="sk-lv">Proficient</span></div><div class="sk-tr"><div class="sk-fi" data-w="72"></div></div></div>
+        <div class="sk-row"><div class="sk-top"><span class="sk-n">Cloud &mdash; AWS, GCP, Azure</span><span class="sk-lv">Proficient</span></div><div class="sk-tr"><div class="sk-fi" data-w="70"></div></div></div>
+        <div class="sk-hd" style="margin-top:24px">GenAI Frameworks</div>
+        <div class="chips"><span class="chip">LangChain</span><span class="chip">LlamaIndex</span><span class="chip">LangGraph</span><span class="chip">HuggingFace</span><span class="chip">RAGAS</span><span class="chip">Sentence Transformers</span><span class="chip">Ollama</span><span class="chip">OpenAI API</span><span class="chip">Anthropic API</span><span class="chip">Chroma</span></div>
+        <div class="sk-hd" style="margin-top:20px">Data Engineering</div>
+        <div class="chips"><span class="chip">Kafka</span><span class="chip">Airflow</span><span class="chip">Snowflake</span><span class="chip">PySpark</span><span class="chip">dbt</span><span class="chip">PostgreSQL</span><span class="chip">MongoDB</span><span class="chip">Redis</span><span class="chip">Pandas</span><span class="chip">NumPy</span></div>
+      </div>
+      <div>
+        <div style="background:var(--ink2);border:1px solid var(--rule);padding:22px;margin-bottom:22px;display:flex;justify-content:center"><canvas id="radar"></canvas></div>
+        <div style="background:var(--ink2);border:1px solid var(--rule);padding:18px 22px;margin-bottom:22px">
+          <div class="sk-hd" style="margin-bottom:16px">Experience by Domain</div>
+          <canvas id="domainChart" style="width:100%;display:block"></canvas>
+        </div>
+        <div class="sk-hd">Certifications</div>
+        <div class="cert-grid">
+          <div class="cert" onclick="window.open('https://www.linkedin.com/feed/update/urn:li:activity:7298400068166959107/','_blank')"><div class="cert-iss">Weaviate</div>Vector DB Professional</div>
+          <div class="cert" onclick="window.open('https://www.coursera.org/account/accomplishments/specialization/certificate/8B40JW0AQCH9','_blank')"><div class="cert-iss">DeepLearning.AI / Coursera</div>Deep Learning Specialisation</div>
+          <div class="cert" onclick="window.open('https://www.coursera.org/account/accomplishments/specialization/certificate/BAXZWV4U9LXV','_blank')"><div class="cert-iss">DeepLearning.AI / Coursera</div>Gen AI for Software Development</div>
+          <div class="cert" onclick="window.open('https://www.coursera.org/account/accomplishments/certificate/8BJ5N92HYJMR','_blank')"><div class="cert-iss">DeepLearning.AI / Coursera</div>CNNs in TensorFlow</div>
+          <div class="cert" onclick="window.open('https://linkedin.com/in/priyansh-bhardwaj-25964317a','_blank')"><div class="cert-iss">DeepLearning.AI / Coursera</div>Intro to TensorFlow for AI, ML &amp; DL</div>
+          <div class="cert" onclick="window.open('https://linkedin.com/in/priyansh-bhardwaj-25964317a','_blank')"><div class="cert-iss">LinkedIn Profile</div>View all certificates &rarr;</div>
+        </div>
+      </div>
+    </div>
+    <div class="edu-box rv">
+      <div class="sec-num" style="margin-bottom:14px">Education</div>
+      <div class="edu-grid">
+        <div class="edu-blk"><div class="edu-lbl">Degree</div><p><strong>B.Tech, Computer Science &amp; Engineering</strong><br>Modern Institute of Technology &amp; Research Centre, Alwar<br>2018 &ndash; 2022 &middot; CGPA <strong>8.95 / 10</strong></p></div>
+        <div class="edu-blk"><div class="edu-lbl">Academic Standing</div><p>CGPA 8.95 within the top percentile of the graduating cohort. Strong foundation in algorithms, data structures, applied mathematics, and distributed systems.</p></div>
+        <div class="edu-blk"><div class="edu-lbl">International Recognition</div><p>Degree recognised at <strong>H+ level on the German Anabin database</strong>. Qualifies for <strong>EU Blue Card</strong> in Germany and <strong>Skilled Worker Visa</strong> across the EU and UK. Open to relocation &mdash; visa sponsorship required.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="writing" class="sec">
+  <div class="wrap">
+    <div class="sec-hd rv">
+      <div><div class="sec-num">04 &mdash; Writing</div><h2 class="st">Blog &amp; <em>Publications</em></h2></div>
+      <div class="sec-hd-r">Technical writing on applied ML &mdash; production trade-offs, evaluation methodology, and honest accounts of what the numbers mean.</div>
+    </div>
+    <div class="wgrid">
+      <div class="ac rv">
+        <div class="a-tag">Published &middot; Medium &middot; Jul 2024</div>
+        <h3 class="a-ttl">Predicting Air Quality with Machine Learning</h3>
+        <p class="a-exc">A complete walkthrough of building a 94%-accurate AQI system for 300+ Indian locations &mdash; feature engineering, model selection, and what working with real government monitoring data actually looks like.</p>
+        <a href="https://medium.com/@PriyanshBh/df59902566fc" target="_blank" class="a-lnk">Read on Medium &#8594;</a>
+      </div>
+      <div class="ac rv d1">
+        <div class="a-tag">Published &middot; Medium &middot; Mar 2026</div>
+        <h3 class="a-ttl">Grounding Your LLM: A Practical Guide to RAG for Enterprise Knowledge Bases</h3>
+        <p class="a-exc">What a successful RAG demo hides &mdash; and what breaks the moment someone asks about real company data. A production walkthrough from architecture to the evaluation step most teams skip entirely.</p>
+        <a href="https://medium.com/@PriyanshBh/grounding-your-llm-a-practical-guide-to-rag-for-enterprise-knowledge-bases-78c19a11c0c8" target="_blank" class="a-lnk">Read on Medium &#8594;</a>
+      </div>
+      <div class="ac rv d2">
+        <div class="a-tag">Published &middot; Medium &middot; Mar 2026</div>
+        <h3 class="a-ttl">The Chunk That Broke My RAG Pipeline</h3>
+        <p class="a-exc">A post-mortem on a specific chunking failure in production &mdash; what went wrong, why it passed testing, and what the fix actually looked like. The kind of thing you only learn by shipping, not by reading docs.</p>
+        <a href="https://medium.com/@PriyanshBh/the-chunk-that-broke-my-rag-pipeline-502e66b63538" target="_blank" class="a-lnk">Read on Medium &#8594;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="sec">
+  <div class="wrap">
+    <div class="sec-hd rv">
+      <div><div class="sec-num">05 &mdash; Contact</div><h2 class="st">Let's <em>Connect</em></h2></div>
+      <div class="sec-hd-r">Open to senior ML/AI engineering roles in EU and UK. Interested in teams where evaluation rigour and production reliability are first-class concerns.</div>
+    </div>
+    <div class="ct-grid rv">
+      <div>
+        <h3 class="ct-h">Available for <em>new opportunities</em></h3>
+        <p class="ct-p">Actively looking for senior ML or Applied AI engineering roles in Germany, the Netherlands, the UK, and the EU broadly. Happy to talk through relocation timelines, visa support, and what the day-to-day looks like before either of us commits.</p>
+        <ul class="ct-list">
+          <li class="ct-i"><span class="ct-ico">in</span><span class="ct-txt"><a href="https://linkedin.com/in/priyansh-bhardwaj-25964317a" target="_blank">linkedin.com/in/priyansh-bhardwaj</a></span></li>
+          <li class="ct-i"><span class="ct-ico">gh</span><span class="ct-txt"><a href="https://github.com/PriyanshBhardwaj" target="_blank">github.com/PriyanshBhardwaj</a></span></li>
+          <li class="ct-i"><span class="ct-ico">&#9096;</span><span class="ct-txt">Gurugram, Haryana, India</span></li>
+          <li class="ct-i"><span class="ct-ico">&#9992;</span><span class="ct-txt">Open to relocation &middot; EU &amp; UK &middot; Visa sponsorship required</span></li>
+        </ul>
+      </div>
+      <form class="cf" id="cform">
+        <div class="frow">
+          <div class="fg"><label class="flbl">Name</label><input class="fin" id="fn" type="text" placeholder="Your name" required></div>
+          <div class="fg"><label class="flbl">Company</label><input class="fin" id="fc" type="text" placeholder="Optional"></div>
+        </div>
+        <div class="fg"><label class="flbl">Reply-to Email</label><input class="fin" id="fe" type="email" placeholder="your@company.com" required></div>
+        <div class="fg"><label class="flbl">Message</label><textarea class="fta" id="fm" placeholder="Tell me about the role or what you are building..." required></textarea></div>
+        <div class="fmsg" id="fmsg"></div>
+        <button class="fbtn" type="button" id="fbtn" onclick="sendForm()">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="fc">&#169; 2026 Priyansh Bhardwaj &middot; ML Engineer &middot; Gurugram, Haryana, India</span>
+  <div class="flinks">
+    <a href="https://linkedin.com/in/priyansh-bhardwaj-25964317a" target="_blank">LinkedIn</a>
+    <a href="https://github.com/PriyanshBhardwaj" target="_blank">GitHub</a>
+    <a href="https://medium.com/@PriyanshBh" target="_blank">Medium</a>
+    <a onclick="doEmail()">Email</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  function openMail(subj, body) {
+    var a = document.createElement('a');
+    var h = 'priyanshb11';
+    var d = 'gmail.com';
+    var addr = h + String.fromCharCode(64) + d;
+    var href = 'mai' + 'lto:' + addr;
+    if (subj) href += '?subject=' + encodeURIComponent(subj);
+    if (body) href += (subj ? '&' : '?') + 'body=' + encodeURIComponent(body);
+    a.href = href;
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function () { document.body.removeChild(a); }, 100);
+  }
+
+  window.doEmail   = function () { openMail('', ''); };
+  window.toggleNav = function () { document.getElementById('ham').classList.toggle('open'); document.getElementById('drawer').classList.toggle('open'); };
+  window.closeNav  = function () { document.getElementById('ham').classList.remove('open'); document.getElementById('drawer').classList.remove('open'); };
+
+  window.sendForm = function () {
+    var name = document.getElementById('fn').value.trim();
+    var co   = document.getElementById('fc').value.trim();
+    var mail = document.getElementById('fe').value.trim();
+    var msg  = document.getElementById('fm').value.trim();
+    if (!name || !mail || !msg) return;
+    var subj = 'Portfolio enquiry' + (co ? ' - ' + co : '');
+    var body = 'Hi Priyansh,\n\nName: ' + name + '\n' + (co ? 'Company: ' + co + '\n' : '') + 'Reply-to: ' + mail + '\n\n' + msg;
+    document.getElementById('fbtn').textContent = 'Opening mail...';
+    openMail(subj, body);
+    setTimeout(function () {
+      var el = document.getElementById('fmsg');
+      el.style.display = 'block';
+      el.style.color = 'var(--green)';
+      el.textContent = 'Mail client opened with your message pre-filled.';
+      document.getElementById('fbtn').textContent = 'Send Message';
+    }, 1200);
+  };
+
+  function tenure(sy, sm) {
+    var now = new Date(), m = (now.getFullYear() - sy) * 12 + (now.getMonth() + 1 - sm);
+    var y = Math.floor(m / 12), r = m % 12;
+    if (y === 0) return r + 'mo';
+    if (r === 0) return y + (y > 1 ? 'yrs' : 'yr');
+    return y + (y > 1 ? 'yrs' : 'yr') + ' ' + r + 'mo';
+  }
+  function totalYrs(sy, sm) {
+    var now = new Date(), m = (now.getFullYear() - sy) * 12 + (now.getMonth() + 1 - sm);
+    return Math.floor(m / 12) + '+ years';
+  }
+  var dStr = tenure(2025, 4), tStr = totalYrs(2021, 9);
+  ['dun-tenure','dun-tl'].forEach(function (id) { var e = document.getElementById(id); if (e) e.textContent = dStr; });
+  ['exp-band','exp-inline'].forEach(function (id) { var e = document.getElementById(id); if (e) e.textContent = tStr; });
+
+  var hintGone = false;
+  window.addEventListener('scroll', function () {
+    if (!hintGone && window.scrollY > 60) { var h = document.getElementById('scrollHint'); if (h) h.classList.add('gone'); hintGone = true; }
+  }, { passive: true });
+
+  var cEl = document.getElementById('cur'), rEl = document.getElementById('cur-r');
+  var mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', function (e) { mx = e.clientX; my = e.clientY; });
+  (function tick() { cEl.style.left = mx + 'px'; cEl.style.top = my + 'px'; rx += (mx - rx) * 0.22; ry += (my - ry) * 0.22; rEl.style.left = rx + 'px'; rEl.style.top = ry + 'px'; requestAnimationFrame(tick); }());
+
+  var canvas = document.getElementById('bgc'), ctx = canvas.getContext('2d'), dots = [], W, H, sy = 0;
+  function initCanvas() {
+    W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; dots = [];
+    for (var x = 0; x < W; x += 44) for (var y = 0; y < H; y += 44) dots.push({ x: x, y: y });
+  }
+  window.addEventListener('resize', function () { initCanvas(); drawRadar(); });
+  window.addEventListener('scroll', function () { sy = window.scrollY; }, { passive: true });
+  initCanvas();
+  (function drawDots() {
+    ctx.clearRect(0, 0, W, H);
+    var t = Date.now() * 0.001;
+    for (var i = 0; i < dots.length; i++) {
+      var d = dots[i], w = Math.sin(d.x * 0.014 + d.y * 0.009 + t * 0.38) * 2;
+      var px = d.x + w, py = (d.y + w * 0.5 + sy * 0.014) % H;
+      var dist = Math.hypot(mx - px, my - py), pull = Math.max(0, 1 - dist / 130);
+      ctx.beginPath();
+      ctx.arc(px + (mx - px) * pull * 0.14, py + (my - py) * pull * 0.14, 0.9 + pull * 1.6, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(196,144,64,' + (0.15 + pull * 0.42) + ')';
+      ctx.fill();
+    }
+    requestAnimationFrame(drawDots);
+  }());
+
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('vs');
+      e.target.querySelectorAll('.sk-fi').forEach(function (b) { b.style.width = b.dataset.w + '%'; });
+    });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.rv').forEach(function (el) { obs.observe(el); });
+
+  function drawRadar() {
+    var el = document.getElementById('radar'); if (!el) return;
+    var sz = Math.min(el.parentElement.clientWidth - 44, 320); el.width = sz; el.height = sz;
+    var rc = el.getContext('2d'), cx = sz / 2, cy = sz / 2, R = sz * 0.32;
+    var cats = ['RAG/LLMs', 'Vector DB', 'NLP', 'MLOps', 'RecSys', 'Deep Learning'];
+    var vals = [0.95, 0.92, 0.90, 0.83, 0.82, 0.78], N = cats.length, i, a;
+    [0.25, 0.5, 0.75, 1].forEach(function (r) {
+      rc.beginPath();
+      for (i = 0; i < N; i++) { a = (i/N)*2*Math.PI - Math.PI/2; if (i===0) rc.moveTo(cx+R*r*Math.cos(a),cy+R*r*Math.sin(a)); else rc.lineTo(cx+R*r*Math.cos(a),cy+R*r*Math.sin(a)); }
+      rc.closePath(); rc.strokeStyle = 'rgba(255,255,255,.05)'; rc.lineWidth = 1; rc.stroke();
+    });
+    for (i = 0; i < N; i++) { a = (i/N)*2*Math.PI - Math.PI/2; rc.beginPath(); rc.moveTo(cx,cy); rc.lineTo(cx+R*Math.cos(a),cy+R*Math.sin(a)); rc.strokeStyle = 'rgba(255,255,255,.05)'; rc.lineWidth = 1; rc.stroke(); }
+    rc.beginPath();
+    for (i = 0; i < N; i++) { a = (i/N)*2*Math.PI - Math.PI/2; if (i===0) rc.moveTo(cx+R*vals[i]*Math.cos(a),cy+R*vals[i]*Math.sin(a)); else rc.lineTo(cx+R*vals[i]*Math.cos(a),cy+R*vals[i]*Math.sin(a)); }
+    rc.closePath(); rc.fillStyle = 'rgba(196,144,64,.11)'; rc.fill(); rc.strokeStyle = 'rgba(196,144,64,.65)'; rc.lineWidth = 1.5; rc.stroke();
+    for (i = 0; i < N; i++) { a = (i/N)*2*Math.PI - Math.PI/2; rc.beginPath(); rc.arc(cx+R*vals[i]*Math.cos(a),cy+R*vals[i]*Math.sin(a),3,0,Math.PI*2); rc.fillStyle = '#dea95e'; rc.fill(); }
+    rc.font = '300 ' + Math.floor(sz * 0.03) + 'px Fira Code, monospace';
+    rc.fillStyle = 'rgba(125,121,114,.85)'; rc.textAlign = 'center';
+    for (i = 0; i < N; i++) { a = (i/N)*2*Math.PI - Math.PI/2; rc.fillText(cats[i], cx+R*1.42*Math.cos(a), cy+R*1.42*Math.sin(a)+4); }
+  }
+  window.addEventListener('load', drawRadar);
+
+  function drawDomainChart() {
+    var el = document.getElementById('domainChart');
+    if (!el) return;
+    var pw = el.parentElement.clientWidth - 44;
+    el.width = pw; el.height = 160;
+    var rc = el.getContext('2d');
+    var data = [
+      { label: 'GenAI / RAG',    val: 0.95, sub: 'Dunnhumby + Independent' },
+      { label: 'MLOps',          val: 0.85, sub: 'All roles' },
+      { label: 'NLP / Embeddings',val: 0.90, sub: 'Independent' },
+      { label: 'Rec Systems',    val: 0.75, sub: 'Independent' },
+      { label: 'Fintech / Fraud',val: 0.70, sub: 'Signzy' }
+    ];
+    var N = data.length;
+    var rowH = 26, gap = 6, top = 8;
+    var labelW = 130, barX = labelW + 10, barW = pw - labelW - 60;
+    for (var i = 0; i < N; i++) {
+      var y = top + i * (rowH + gap);
+      rc.font = '300 11px Fira Code, monospace';
+      rc.fillStyle = 'rgba(125,121,114,.85)';
+      rc.textAlign = 'left';
+      rc.fillText(data[i].label, 0, y + rowH * 0.65);
+      rc.fillStyle = 'rgba(255,255,255,.05)';
+      rc.fillRect(barX, y + 4, barW, rowH - 8);
+      var filled = barW * data[i].val;
+      var grad = rc.createLinearGradient(barX, 0, barX + filled, 0);
+      grad.addColorStop(0, '#c49040');
+      grad.addColorStop(1, '#dea95e');
+      rc.fillStyle = grad;
+      rc.fillRect(barX, y + 4, filled, rowH - 8);
+      rc.font = '300 10px Fira Code, monospace';
+      rc.fillStyle = 'rgba(125,121,114,.7)';
+      rc.textAlign = 'left';
+      rc.fillText(data[i].sub, barX + filled + 6, y + rowH * 0.65);
+    }
+  }
+  window.addEventListener('load', drawDomainChart);
+  window.addEventListener('resize', drawDomainChart);
+
+  var secs = document.querySelectorAll('section[id]'), navAs = document.querySelectorAll('.n-links a');
+  window.addEventListener('scroll', function () {
+    var cur = ''; secs.forEach(function (s) { if (window.scrollY >= s.offsetTop - 130) cur = s.id; });
+    navAs.forEach(function (a) { a.classList.toggle('on', a.getAttribute('href') === '#' + cur); });
+  }, { passive: true });
+
+}());
+</script>
+</body>
+</html>
