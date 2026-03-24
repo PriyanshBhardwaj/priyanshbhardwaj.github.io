@@ -247,7 +247,7 @@ footer{z-index:1;position:relative;padding:24px 52px;border-top:1px solid var(--
   </ul>
   <div class="n-right">
     <button class="n-ham" id="ham" onclick="toggleNav()"><span></span><span></span><span></span></button>
-    <button class="n-hire" onclick="doEmail()">Get in Touch</button>
+    <button class="n-hire" onclick="sendForm()">Get in Touch</button>
   </div>
 </header>
 
@@ -257,7 +257,7 @@ footer{z-index:1;position:relative;padding:24px 52px;border-top:1px solid var(--
   <a href="#skills" onclick="closeNav()">Skills</a>
   <a href="#writing" onclick="closeNav()">Writing</a>
   <a href="#contact" onclick="closeNav()">Contact</a>
-  <a onclick="doEmail();closeNav()">Get in Touch</a>
+  <a onclick="sendForm();closeNav()">Get in Touch</a>
 </div>
 
 <section id="hero">
@@ -502,7 +502,7 @@ footer{z-index:1;position:relative;padding:24px 52px;border-top:1px solid var(--
           <li class="ct-i"><span class="ct-ico">&#9992;</span><span class="ct-txt">Open to relocation &middot; EU &amp; UK &middot; Visa sponsorship required</span></li>
         </ul>
       </div>
-      <form class="cf" id="cform">
+      <form class="cf" id="cform" action="https://formspree.io/f/xgongjyn" method="POST">
         <div class="frow">
           <div class="fg"><label class="flbl">Name</label><input class="fin" id="fn" type="text" placeholder="Your name" required></div>
           <div class="fg"><label class="flbl">Company</label><input class="fin" id="fc" type="text" placeholder="Optional"></div>
@@ -522,7 +522,7 @@ footer{z-index:1;position:relative;padding:24px 52px;border-top:1px solid var(--
     <a href="https://linkedin.com/in/priyansh-bhardwaj-25964317a" target="_blank">LinkedIn</a>
     <a href="https://github.com/PriyanshBhardwaj" target="_blank">GitHub</a>
     <a href="https://medium.com/@PriyanshBh" target="_blank">Medium</a>
-    <a onclick="doEmail()">Email</a>
+    <!-- <a onclick="doEmail()">Email</a> -->
   </div>
 </footer>
 
@@ -545,7 +545,7 @@ footer{z-index:1;position:relative;padding:24px 52px;border-top:1px solid var(--
     setTimeout(function () { document.body.removeChild(a); }, 100);
   }
 
-  window.doEmail   = function () { openMail('', ''); };
+  // window.doEmail   = function () { openMail('', ''); };
   window.toggleNav = function () { document.getElementById('ham').classList.toggle('open'); document.getElementById('drawer').classList.toggle('open'); };
   window.closeNav  = function () { document.getElementById('ham').classList.remove('open'); document.getElementById('drawer').classList.remove('open'); };
 
@@ -555,17 +555,39 @@ footer{z-index:1;position:relative;padding:24px 52px;border-top:1px solid var(--
     var mail = document.getElementById('fe').value.trim();
     var msg  = document.getElementById('fm').value.trim();
     if (!name || !mail || !msg) return;
-    var subj = 'Portfolio enquiry' + (co ? ' - ' + co : '');
-    var body = 'Hi Priyansh,\n\nName: ' + name + '\n' + (co ? 'Company: ' + co + '\n' : '') + 'Reply-to: ' + mail + '\n\n' + msg;
-    document.getElementById('fbtn').textContent = 'Opening mail...';
-    openMail(subj, body);
-    setTimeout(function () {
-      var el = document.getElementById('fmsg');
+    var btn = document.getElementById('fbtn');
+    var el  = document.getElementById('fmsg');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    fetch(document.getElementById('cform').action, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: name,
+        company: co,
+        _replyto: mail,
+        message: msg
+      })
+    }).then(function (r) {
       el.style.display = 'block';
-      el.style.color = 'var(--green)';
-      el.textContent = 'Mail client opened with your message pre-filled.';
-      document.getElementById('fbtn').textContent = 'Send Message';
-    }, 1200);
+      if (r.ok) {
+        el.style.color = 'var(--green)';
+        el.textContent = 'Message sent. I will get back to you within 24 hours.';
+        document.getElementById('cform').reset();
+        btn.textContent = 'Sent';
+      } else {
+        el.style.color = '#e07070';
+        el.textContent = 'Something went wrong. Please reach out on LinkedIn.';
+        btn.textContent = 'Send Message';
+        btn.disabled = false;
+      }
+    }).catch(function () {
+      el.style.display = 'block';
+      el.style.color = '#e07070';
+      el.textContent = 'Network error. Please reach out on LinkedIn.';
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+    });
   };
 
   function tenure(sy, sm) {
