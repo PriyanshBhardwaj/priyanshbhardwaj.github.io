@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
 <title>Priyansh Bhardwaj - AI Engineer</title>
-<meta name="description" content="Senior ML Engineer specialising in RAG systems, vector search, and production GenAI. Open to EU and UK roles.">
+<meta name="description" content="Senior AI Engineer specialising in generative AI, multi-agent systems, RAG, and production LLM infrastructure. Open to US, EU, UK, Canada, and remote roles.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Syne:wght@300;400;500&family=Fira+Code:wght@300;400&display=swap" rel="stylesheet">
 <style>
@@ -33,8 +33,8 @@ body:has(a:hover) #cur-r{width:52px;height:52px;border-color:var(--amber)}
 .n-links a:hover::after,.n-links a.on::after{transform:scaleX(1)}
 .n-links a:hover,.n-links a.on{color:var(--cream)}
 .n-right{display:flex;align-items:center;gap:12px}
-.n-hire{font-family:'Fira Code',monospace;font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);background:var(--amber);padding:7px 20px;border:none;cursor:pointer;transition:background .2s}
-.n-hire:hover{background:var(--amber-hi)}
+.n-hire{font-family:'Fira Code',monospace;font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);background:var(--amber);padding:7px 20px;border:none;border-radius:999px;cursor:pointer;transition:background .22s,transform .22s,box-shadow .22s}
+.n-hire:hover{background:var(--amber-hi);transform:translateY(-2px);box-shadow:0 8px 20px rgba(196,144,64,.28)}
 .n-ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
 .n-ham span{display:block;width:22px;height:1.5px;background:var(--cream);transition:all .25s}
 .n-ham.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
@@ -53,7 +53,7 @@ body:has(a:hover) #cur-r{width:52px;height:52px;border-color:var(--amber)}
 .h-name1{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(5rem,13vw,11.5rem);letter-spacing:.04em;line-height:.9;color:var(--cream);text-shadow:0 2px 0 rgba(196,144,64,.28),0 6px 28px rgba(0,0,0,.7);opacity:0;animation:fup .9s .32s forwards;margin-bottom:2px}
 .h-name2{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(5rem,13vw,11.5rem);letter-spacing:.04em;line-height:.9;color:transparent;-webkit-text-stroke:1px rgba(237,233,227,.2);opacity:0;animation:fup .9s .44s forwards;margin-bottom:30px}
 .h-divider{width:1px;height:52px;background:linear-gradient(to bottom,var(--amber),transparent);margin:0 auto 28px;opacity:0;animation:fup .6s .58s forwards}
-.h-summary{max-width:620px;margin:0 auto 36px;font-size:1.02rem;color:var(--mid);line-height:1.9;font-weight:300;opacity:0;animation:fup .8s .68s forwards}
+.h-summary{max-width:680px;margin:0 auto 36px;font-size:1.02rem;color:var(--mid);line-height:1.9;font-weight:300;opacity:0;animation:fup .8s .68s forwards}
 .h-summary strong{color:var(--cream);font-weight:500}
 .h-band{display:flex;border:1px solid var(--rule2);margin:0 auto 40px;max-width:880px;width:100%;opacity:0;animation:fup .7s .82s forwards}
 .h-bi{padding:18px 28px;border-right:1px solid var(--rule2);text-align:left;flex:1;min-width:0}
@@ -64,9 +64,9 @@ body:has(a:hover) #cur-r{width:52px;height:52px;border-color:var(--amber)}
 .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);margin-right:6px;animation:glw 2.5s ease-in-out infinite;vertical-align:middle}
 @keyframes glw{0%,100%{box-shadow:0 0 0 0 rgba(77,184,122,.5)}50%{box-shadow:0 0 0 5px rgba(77,184,122,0)}}
 .h-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fup .7s .96s forwards}
-.btn{font-family:'Fira Code',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:11px 26px;transition:all .22s;display:inline-block;cursor:pointer}
-.btn-s{background:var(--amber);color:var(--ink);border:none}
-.btn-s:hover{background:var(--amber-hi);transform:translateY(-2px)}
+.btn{font-family:'Fira Code',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:11px 26px;border-radius:999px;transition:all .22s;display:inline-block;cursor:pointer}
+.btn-s{background:var(--amber);color:var(--ink);border:none;box-shadow:0 1px 0 rgba(255,255,255,.08) inset}
+.btn-s:hover{background:var(--amber-hi);transform:translateY(-3px);box-shadow:0 10px 24px rgba(196,144,64,.32)}
 .btn-g{border:1px solid var(--rule2);color:var(--mid);background:transparent}
 .btn-g:hover{border-color:var(--amber);color:var(--amber);transform:translateY(-2px)}
 .h-scroll{display:flex;flex-direction:column;align-items:center;gap:7px;margin-top:44px;opacity:0;animation:fup .6s 1.2s forwards;transition:opacity .5s}
@@ -80,7 +80,7 @@ body:has(a:hover) #cur-r{width:52px;height:52px;border-color:var(--amber)}
 .sec-num{font-family:'Fira Code',monospace;font-size:.63rem;letter-spacing:.14em;color:var(--amber);margin-bottom:7px}
 h2.st{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2rem,3.2vw,2.75rem);font-weight:400;color:var(--cream);line-height:1.1}
 h2.st em{font-style:italic;color:var(--amber-hi)}
-.sec-hd-r{font-size:.86rem;color:var(--mid);max-width:340px;text-align:right;line-height:1.72}
+.sec-hd-r{font-size:.86rem;color:var(--mid);max-width:420px;text-align:right;line-height:1.72}
 .timeline{position:relative;padding-left:28px}
 .timeline::before{content:'';position:absolute;left:0;top:10px;bottom:0;width:1px;background:linear-gradient(to bottom,var(--amber),rgba(196,144,64,.15))}
 .tl-item{position:relative;padding:0 0 68px 48px}
@@ -101,8 +101,8 @@ h2.st em{font-style:italic;color:var(--amber-hi)}
 .tl-pts li::before{content:'';position:absolute;left:0;top:18px;width:8px;height:1px;background:var(--amber)}
 .tl-pts li strong{color:var(--cream);font-weight:500}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
-.tg{font-family:'Fira Code',monospace;font-size:.59rem;letter-spacing:.07em;color:var(--low);border:1px solid var(--rule2);padding:3px 9px;transition:all .2s}
-.tg:hover{color:var(--amber);border-color:rgba(196,144,64,.3)}
+.tg{font-family:'Fira Code',monospace;font-size:.59rem;letter-spacing:.07em;color:rgba(237,233,227,.58);border:1px solid rgba(237,233,227,.16);background:rgba(255,255,255,.035);padding:4px 10px;transition:all .2s}
+.tg:hover{color:var(--amber-hi);border-color:rgba(196,144,64,.4);background:rgba(196,144,64,.08)}
 .pfeat{display:grid;grid-template-columns:1.1fr .9fr;border:1px solid var(--rule2);margin-bottom:2px;transition:border-color .3s}
 .pfeat:hover{border-color:rgba(196,144,64,.35)}
 .pf-l{padding:50px 46px;border-right:1px solid var(--rule2)}
@@ -112,11 +112,13 @@ h3.ph{font-family:'Playfair Display',Georgia,serif;font-size:1.85rem;font-weight
 h3.ph em{font-style:italic;color:var(--amber-hi)}
 .pb{font-size:.88rem;color:var(--mid);line-height:1.82;margin-bottom:24px}
 .pcall{background:var(--amber-lo);border-left:2px solid var(--amber);padding:13px 17px;margin-bottom:24px;font-size:.86rem;color:var(--cream);line-height:1.72}
+.pf-cta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
 .pcall span{color:var(--amber-hi);font-weight:500}
 .psl{font-family:'Fira Code',monospace;font-size:.58rem;letter-spacing:.14em;color:var(--low);text-transform:uppercase;margin-bottom:10px}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
-.chip{font-family:'Fira Code',monospace;font-size:.6rem;letter-spacing:.06em;color:var(--low);border:1px solid var(--rule2);padding:4px 10px;transition:all .2s}
-.chip:hover{color:var(--amber);border-color:rgba(196,144,64,.3)}
+.chip{font-family:'Fira Code',monospace;font-size:.6rem;letter-spacing:.06em;color:rgba(237,233,227,.58);border:1px solid rgba(237,233,227,.16);background:rgba(255,255,255,.035);padding:4px 10px;transition:all .2s}
+.chip:hover{color:var(--amber-hi);border-color:rgba(196,144,64,.4);background:rgba(196,144,64,.08)}
+.chip.hi{color:var(--amber-hi);border-color:rgba(196,144,64,.38);background:rgba(196,144,64,.08)}
 .albl{font-family:'Fira Code',monospace;font-size:.58rem;letter-spacing:.14em;color:var(--amber);text-transform:uppercase;margin-bottom:16px}
 .ai{padding:13px 0;border-bottom:1px solid var(--rule);font-size:.84rem;line-height:1.68}
 .ai:last-child{border-bottom:none}
@@ -141,8 +143,8 @@ h3.ph em{font-style:italic;color:var(--amber-hi)}
 .sk-fi{height:100%;background:linear-gradient(90deg,var(--amber),var(--amber-hi));width:0;transition:width 1.5s cubic-bezier(.4,0,.2,1);position:relative}
 .sk-fi::after{content:'';position:absolute;right:-1px;top:-2px;width:5px;height:5px;border-radius:50%;background:var(--amber-hi)}
 .cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:8px}
-.cert{border:1px solid var(--rule);padding:11px 14px;font-size:.78rem;color:var(--mid);line-height:1.4;transition:border-color .2s,background .2s;cursor:pointer}
-.cert:hover{border-color:var(--amber);background:rgba(196,144,64,.05)}
+.cert{border:1px solid var(--rule);padding:11px 14px;font-size:.78rem;color:var(--mid);line-height:1.4;transition:border-color .22s,background .22s,transform .22s;cursor:pointer}
+.cert:hover{border-color:var(--amber);background:rgba(196,144,64,.05);transform:translateY(-2px)}
 .cert-iss{font-family:'Fira Code',monospace;font-size:.58rem;color:var(--amber);margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em}
 .edu-box{margin-top:48px;padding:28px 32px;border:1px solid var(--rule);background:var(--ink2)}
 .edu-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px}
@@ -152,11 +154,12 @@ h3.ph em{font-style:italic;color:var(--amber-hi)}
 .wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
 .ac{background:var(--ink2);border:1px solid var(--rule);padding:34px 28px;transition:background .25s,border-color .25s;display:flex;flex-direction:column}
 .ac:hover{background:var(--ink3);border-color:var(--rule2)}
-.a-tag{font-family:'Fira Code',monospace;font-size:.58rem;letter-spacing:.1em;color:var(--amber);text-transform:uppercase;margin-bottom:12px}
+.a-pub{font-family:'Fira Code',monospace;font-size:.58rem;letter-spacing:.1em;color:var(--amber);text-transform:uppercase}
+.a-date{font-family:'Fira Code',monospace;font-size:.58rem;letter-spacing:.08em;color:rgba(237,233,227,.4);text-transform:uppercase;margin-top:3px;margin-bottom:12px}
 .a-ttl{font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;color:var(--cream);font-weight:400;margin-bottom:10px;line-height:1.32}
 .a-exc{font-size:.83rem;color:var(--mid);line-height:1.74;flex:1;margin-bottom:20px}
-.a-lnk{font-family:'Fira Code',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:gap .2s;margin-top:auto}
-.a-lnk:hover{gap:13px}
+.a-lnk{font-family:'Fira Code',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);background:var(--amber);text-decoration:none;display:inline-flex;align-items:center;gap:8px;margin-top:auto;align-self:flex-start;padding:8px 16px;border:none;border-radius:999px;transition:background .22s,transform .22s,box-shadow .22s,gap .22s}
+.a-lnk:hover{background:var(--amber-hi);transform:translateY(-3px);box-shadow:0 10px 24px rgba(196,144,64,.32);gap:12px;color:var(--ink)}
 #contact{border-bottom:none}
 .ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:76px}
 .ct-h{font-family:'Playfair Display',Georgia,serif;font-size:1.85rem;font-weight:400;color:var(--cream);margin-bottom:14px;line-height:1.2}
@@ -177,14 +180,14 @@ h3.ph em{font-style:italic;color:var(--amber-hi)}
 .fin:focus,.fta:focus{border-color:rgba(196,144,64,.5)}
 .fin::placeholder,.fta::placeholder{color:var(--low)}
 .fta{resize:vertical;min-height:108px}
-.fbtn{font-family:'Fira Code',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);background:var(--amber);padding:12px 28px;border:none;cursor:pointer;transition:background .2s;align-self:flex-start}
-.fbtn:hover{background:var(--amber-hi)}
+.fbtn{font-family:'Fira Code',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);background:var(--amber);padding:12px 28px;border:none;border-radius:999px;cursor:pointer;transition:background .22s,transform .22s,box-shadow .22s;align-self:flex-start}
+.fbtn:hover{background:var(--amber-hi);transform:translateY(-3px);box-shadow:0 10px 24px rgba(196,144,64,.32)}
 .fmsg{display:none;font-family:'Fira Code',monospace;font-size:.72rem;padding:10px 0}
-footer{z-index:1;position:relative;padding:24px 52px;border-top:1px solid var(--rule);display:flex;align-items:center;justify-content:space-between}
-.fc{font-family:'Fira Code',monospace;font-size:.61rem;color:var(--low);letter-spacing:.08em}
+footer{z-index:1;position:relative;padding:28px 52px;border-top:none;background:var(--ink);display:flex;align-items:center;justify-content:space-between}
+.fc{font-family:'Fira Code',monospace;font-size:.64rem;color:rgba(237,233,227,.42);letter-spacing:.08em}
 .flinks{display:flex;gap:22px}
-.flinks a{font-family:'Fira Code',monospace;font-size:.61rem;color:var(--low);text-decoration:none;letter-spacing:.08em;transition:color .2s}
-.flinks a:hover{color:var(--amber)}
+.flinks a{font-family:'Fira Code',monospace;font-size:.64rem;color:rgba(237,233,227,.42);text-decoration:none;letter-spacing:.08em;transition:color .2s}
+.flinks a:hover{color:var(--amber-hi)}
 @keyframes fup{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .rv{opacity:0;transform:translateY(24px);transition:opacity .68s ease,transform .68s ease}
 .rv.vs{opacity:1;transform:none}
@@ -264,11 +267,11 @@ footer{z-index:1;position:relative;padding:24px 52px;border-top:1px solid var(--
 
 <section id="hero">
   <div class="h-glow"></div>
-  <div class="h-eye"><i></i>Artificial Intelligence Engineer &middot; Gen AI Systems<i></i></div>
+  <div class="h-eye"><i></i>Senior AI Engineer &middot; Generative AI &amp; Agentic Systems<i></i></div>
   <div class="h-name1">PRIYANSH</div>
   <div class="h-name2">BHARDWAJ</div>
   <div class="h-divider"></div>
-  <p class="h-summary">I build <strong>production AI systems</strong> - RAG pipelines, recommendation engines, and GenAI infrastructure - that go beyond proof-of-concept into reliable, measurable, scalable software. <span id="exp-inline"></span> across <strong>fintech, retail analytics, and healthcare</strong>, working at the boundary between ML research and engineering discipline.</p>
+  <p class="h-summary">I work on <strong>generative AI systems</strong> &mdash; multi-agent pipelines, RAG, and the evaluation around both. Most of the interesting problems, for me, are in the wiring: how agents split a task, how they call tools, and how you tell whether the output is actually right. <span id="exp-inline"></span> as an AI engineer.</p>
   <div class="h-band">
     <div class="h-bi">
       <div class="h-bi-lbl">Current Role</div>
@@ -276,22 +279,22 @@ footer{z-index:1;position:relative;padding:24px 52px;border-top:1px solid var(--
     </div>
     <div class="h-bi">
       <div class="h-bi-lbl">Total Experience</div>
-      <div class="h-bi-val"><span id="exp-band"></span><br><small>AI Engineering &middot; GenAI &middot; MLOps</small></div>
+      <div class="h-bi-val"><span id="exp-band"></span><br><small>Gen AI &middot; Agents &middot; ML Systems</small></div>
     </div>
     <div class="h-bi">
-      <div class="h-bi-lbl">Domain Expertise</div>
-      <div class="h-bi-val">Gen AI Systems &middot; RAG &middot; LLMOps<br><small>Recommendation &middot; Summarisation</small></div>
+      <div class="h-bi-lbl">Focus</div>
+      <div class="h-bi-val">Agentic Systems &middot; RAG &middot; LLMOps<br><small>Multi-agent &middot; MCP &middot; LangGraph</small></div>
     </div>
     <div class="h-bi">
       <div class="h-bi-lbl">Work Eligibility</div>
-      <div class="h-bi-val">Open to Canada, EU &amp; UK roles<br><small>Visa sponsorship required &middot; Relocation ready</small></div>
+      <div class="h-bi-val">US, Canada, EU &amp; UK &middot; Remote<br><small>Visa sponsorship required &middot; Relocation ready</small></div>
     </div>
   </div>
   <div class="h-ctas">
-    <a href="#projects" class="btn btn-s">View Projects</a>
+    <a href="#projects" class="btn btn-g">View Projects</a>
     <a href="#experience" class="btn btn-g">Experience</a>
-    <a href="https://github.com/PriyanshBhardwaj" target="_blank" class="btn btn-g">GitHub</a>
-    <a href="https://linkedin.com/in/priyansh-bhardwaj-25964317a" target="_blank" class="btn btn-g">LinkedIn</a>
+    <a href="https://github.com/PriyanshBhardwaj" target="_blank" rel="noopener" class="btn btn-s">GitHub</a>
+    <a href="https://linkedin.com/in/priyansh-bhardwaj-25964317a" target="_blank" rel="noopener" class="btn btn-s">LinkedIn</a>
   </div>
   <div class="h-scroll" id="scrollHint"><div class="h-scroll-lbl">Scroll</div><div class="h-scroll-ln"></div></div>
 </section>
@@ -300,7 +303,7 @@ footer{z-index:1;position:relative;padding:24px 52px;border-top:1px solid var(--
   <div class="wrap">
     <div class="sec-hd rv">
       <div><div class="sec-num">01 - Experience</div><h2 class="st">Career <em>Timeline</em></h2></div>
-      <div class="sec-hd-r">Three roles across fintech, retail analytics, and independent product engineering - each ending with shipped, monitored systems in production.</div>
+      <div class="sec-hd-r">Most of my recent work is generative AI: agents that retrieve, generate, and call tools, and the evaluation that tells you if they are doing it well. The roles below are how that developed &mdash; from models on live transaction pipelines, through shipping retrieval products independently, to running agent systems now.</div>
     </div>
     <div class="timeline">
       <div class="tl-item rv">
@@ -308,29 +311,30 @@ footer{z-index:1;position:relative;padding:24px 52px;border-top:1px solid var(--
         <div class="tl-meta"><span class="tl-per">Apr 2025 - Present &middot; <span id="dun-tl"></span></span><span class="tl-tag cur">Current</span></div>
         <div class="tl-co">Dunnhumby</div>
         <div class="tl-role">Senior Applied Data Scientist</div>
-        <p class="tl-lead">Dunnhumby is a global customer data science company serving major retailers including Tesco, Kroger, and Meijer. My remit covers the full pipeline from raw data and LLM architecture to production deployment and ongoing evaluation. Enterprise-scale work: large internal knowledge bases, multiple teams consuming AI outputs, and reliability expectations that make experimentation-mode thinking inadequate.</p>
+        <p class="tl-lead">Dunnhumby is a global customer data science company serving major retailers including Tesco, Kroger, and Meijer. A lot of internal work arrives as messy questions over large knowledge bases and datasets &mdash; not a single lookup, but a task that needs retrieval, reasoning, tool use, and a decision about whether a person should still look. My job is to turn that into an agent system: which parts of a request should be specialised agents, how they pass state to each other, and where a human gate still belongs, especially when the system is writing rather than only answering.</p>
         <ul class="tl-pts">
-          <li>Architected an enterprise <strong>RAG system</strong> for natural language access to internal knowledge bases - 92% answer accuracy, hallucination rate below 5%, 60% reduction in manual search effort.</li>
-          <li>Designed the <strong>microservices AI architecture</strong> - distributed FastAPI services, Docker + Kubernetes, horizontal autoscaling. Retrieval and generation optimisation reduced end-to-end latency by 10%.</li>
-          <li>Built <strong>evaluation infrastructure</strong> measuring context relevance, faithfulness, and response quality continuously - automated metrics with alerting on degradation.</li>
-          <li>Productionised <strong>AI summarisation and structured query agents</strong> - reducing manual processing workload by 65%.</li>
-          <li>Led <strong>cross-functional collaboration</strong> between data engineering and product teams to transition prototypes into stable, documented production systems.</li>
+          <li>Built <strong>multi-agent systems in LangGraph</strong> &mdash; separate agents for retrieval, generation, validation, and tool use, instead of one prompt handling the full task.</li>
+          <li>Moved shared tools onto <strong>MCP servers</strong> so agents discover and call them from one schema. Human approval sits on high-risk writes, not on every action.</li>
+          <li>Architected an enterprise <strong>RAG system</strong> for internal knowledge &mdash; 92% answer accuracy, hallucination below 5%, 60% less time spent searching manually.</li>
+          <li>Ran <strong>evaluation in production</strong>: RAGAS plus custom LLM judges, with alerts when faithfulness or context relevance drops.</li>
+          <li>Shipped <strong>query and summarisation agents</strong>; routed cheaper models on mechanical steps and trimmed handoff context to keep token cost down.</li>
+          <li>Designed the <strong>serving layer</strong> &mdash; FastAPI, Docker, Kubernetes, autoscaling. Retrieval and generation changes cut end-to-end latency by 10%.</li>
         </ul>
-        <div class="tags"><span class="tg">RAG</span><span class="tg">FastAPI</span><span class="tg">Kubernetes</span><span class="tg">Docker</span><span class="tg">LLMs</span><span class="tg">RAGAS</span><span class="tg">Evaluation Pipelines</span><span class="tg">AI Agents</span><span class="tg">Microservices</span></div>
+        <div class="tags"><span class="tg">Multi-Agent Systems</span><span class="tg">LangGraph</span><span class="tg">MCP</span><span class="tg">Agent Orchestration</span><span class="tg">RAG</span><span class="tg">LLMOps</span><span class="tg">RAGAS</span><span class="tg">FastAPI</span><span class="tg">Kubernetes</span><span class="tg">Docker</span><span class="tg">LLMs</span></div>
       </div>
       <div class="tl-item rv d1">
         <div class="tl-dot"></div>
         <div class="tl-meta"><span class="tl-per">Sep 2022 - Mar 2025 &middot; 2 yrs 7 mos</span><span class="tl-tag">Independent</span></div>
         <div class="tl-co">Independent Product Development</div>
         <div class="tl-role">AI / ML Engineer</div>
-        <p class="tl-lead">Built and shipped three end-to-end AI products independently across healthcare, legal, and fintech - each with a deliberate evaluation methodology before claiming results. Self-directed accountability to hard metrics without the safety net of a team to validate assumptions.</p>
+        <p class="tl-lead">Built and shipped three AI products independently: RAG, dense retrieval, and LLM summarisation, plus the MLOps around them.</p>
         <ul class="tl-pts">
-          <li>Built a <strong>production RAG system for healthcare retrieval</strong> - 95% precision via RAGAS evaluation, hallucination monitoring, BioBERT embeddings.</li>
-          <li>Developed an <strong>embedding-based recommendation engine</strong> using two-tower architecture - ROC-AUC from 0.82 to 0.90+ through better embeddings and hard negative sampling.</li>
-          <li>Delivered a <strong>legal summarisation platform</strong> with 92% clause preservation - map-reduce LLM summarisation with cosine similarity evaluation.</li>
-          <li>Built full <strong>MLOps stack</strong>: CI/CD via GitHub Actions, drift detection, Prometheus and Grafana dashboards.</li>
+          <li>Built a <strong>production RAG system</strong> with RAGAS evaluation, hallucination monitoring, and domain embeddings &mdash; 95% precision on a held-out test set.</li>
+          <li>Developed an <strong>embedding retrieval / recommendation engine</strong> using a two-tower architecture &mdash; ROC-AUC from 0.82 to 0.90+ via better embeddings and hard negatives.</li>
+          <li>Delivered an <strong>LLM summarisation platform</strong> with 92% clause preservation, evaluated with semantic similarity against labelled examples.</li>
+          <li>Built the <strong>MLOps stack</strong>: CI/CD via GitHub Actions, drift detection, Prometheus and Grafana.</li>
         </ul>
-        <div class="tags"><span class="tg">FAISS</span><span class="tg">Pinecone</span><span class="tg">Weaviate</span><span class="tg">LangChain</span><span class="tg">LlamaIndex</span><span class="tg">BioBERT</span><span class="tg">MLflow</span><span class="tg">Prometheus</span></div>
+        <div class="tags"><span class="tg">FAISS</span><span class="tg">Pinecone</span><span class="tg">Weaviate</span><span class="tg">LangChain</span><span class="tg">LlamaIndex</span><span class="tg">RAGAS</span><span class="tg">MLflow</span><span class="tg">Prometheus</span></div>
       </div>
       <div class="tl-item rv d2">
         <div class="tl-dot"></div>
@@ -353,47 +357,50 @@ footer{z-index:1;position:relative;padding:24px 52px;border-top:1px solid var(--
   <div class="wrap">
     <div class="sec-hd rv">
       <div><div class="sec-num">02 - Projects</div><h2 class="st">Selected <em>Work</em></h2></div>
-      <div class="sec-hd-r">Five production systems across healthcare, fintech, and legal. Every cited metric comes from an evaluation pipeline - not a back-of-envelope estimate.</div>
+      <div class="sec-hd-r">GARRICK is the system I am building now: a GitHub App that reviews a pull request against the repository graph, not just the diff. The older work here is what led there &mdash; RAG you can evaluate, dense retrieval, summarisation you can measure.</div>
     </div>
     <div class="pfeat rv">
       <div class="pf-l">
-        <div class="pnum">01 - Featured &middot; Healthcare Domain</div>
-        <h3 class="ph">Healthcare RAG<br><em>Retrieval System</em></h3>
-        <p class="pb">Natural language querying over thousands of medical documents, returning cited, verifiable answers grounded in the source corpus. Core challenge: eliminating hallucination without sacrificing coverage or latency.</p>
-        <div class="pcall">Achieved <span>95% summarisation precision</span> and hallucination rate below <span>5%</span> - RAGAS evaluation on a stratified 200-query test set supplemented by human annotation.</div>
+        <div class="pnum">01 - Featured &middot; GitHub App</div>
+        <h3 class="ph">GARRICK<br><em>Multi-Agent PR Intelligence</em></h3>
+        <p class="pb">A GitHub App that reviews pull requests with a multi-agent pipeline and Graph RAG &mdash; line-level feedback that understands the repository, not only the diff. Call structure is mapped first so a change is scored by how it propagates. Orchestration is LangGraph; tools (graph queries, file reads, GitHub comments) sit on an MCP server so agents share one schema.</p>
+        <div class="pcall">Specialist agents run in <span>parallel</span> over that graph &mdash; security, quality, coverage, cross-file impact &mdash; then a validation step filters findings before they are posted.</div>
+        <div class="pf-cta">
+          <a href="https://github.com/apps/garrick-io" target="_blank" rel="noopener" class="btn btn-s">View GitHub App</a>
+        </div>
         <div class="psl">Stack</div>
-        <div class="chips"><span class="chip">Python</span><span class="chip">LangChain</span><span class="chip">Weaviate</span><span class="chip">FAISS</span><span class="chip">BioBERT</span><span class="chip">FastAPI</span><span class="chip">RAGAS</span><span class="chip">Docker</span><span class="chip">Prometheus</span></div>
+        <div class="chips"><span class="chip hi">LangGraph</span><span class="chip hi">MCP</span><span class="chip hi">Multi-Agent</span><span class="chip hi">Graph RAG</span><span class="chip">GitHub Apps</span><span class="chip">LLMs</span><span class="chip">Python</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">Go</span><span class="chip">Java</span></div>
       </div>
       <div class="pf-r">
         <div class="albl">Architecture Decisions That Mattered</div>
-        <div class="ai"><div class="at">Parent-child chunking</div><div class="ad">256-token child for precision, 1024-token parent to LLM. Context Precision: 0.71 to 0.87.</div></div>
-        <div class="ai"><div class="at">BioBERT domain embeddings</div><div class="ad">Myocardial infarction and heart attack are near-identical vectors. General models treat them as distinct - dangerous in clinical retrieval.</div></div>
-        <div class="ai"><div class="at">Two-stage re-ranking</div><div class="ad">Bi-encoder retrieves top-50, cross-encoder re-ranks to top-5. ~100ms cost eliminates irrelevant context that causes hallucination.</div></div>
-        <div class="ai"><div class="at">NLI faithfulness scoring</div><div class="ad">Every response claim scored against retrieved chunks via NLI before delivery. Per-query monitoring, not sampling.</div></div>
-        <div class="ai"><div class="at">Hybrid BM25 + dense search</div><div class="ad">Drug names and ICD codes fail on semantic search alone. Both modes required for clinical language coverage.</div></div>
+        <div class="ai"><div class="at">LangGraph orchestration</div><div class="ad">Map &rarr; specialist agents &rarr; validate &rarr; comment. Independent checks run as parallel branches; graph state holds the repo map and candidate findings.</div></div>
+        <div class="ai"><div class="at">MCP tool server</div><div class="ad">Graph lookup, file read, and GitHub comment posting are MCP tools. Agents bind them at runtime instead of each carrying its own copy.</div></div>
+        <div class="ai"><div class="at">Repository graph before review</div><div class="ad">Call structure and dependency edges are mapped first. Review starts with blast radius, not an isolated file diff.</div></div>
+        <div class="ai"><div class="at">Validated findings</div><div class="ad">A separate check runs before anything is posted, so hallucinated issues are dropped rather than adding comment noise.</div></div>
+        <div class="ai"><div class="at">Polyglot structural parsing</div><div class="ad">Python, JavaScript, TypeScript, Go, Java and more via structural parsing, so the graph is not limited to one language.</div></div>
       </div>
     </div>
     <div class="pgrid rv d1">
       <div class="pc2">
         <div class="pnum">02</div>
-        <h3 class="ph">Embedding-Based<br><em>Recommendation Engine</em></h3>
-        <p class="pb">Two-tower dense retrieval for fintech - users and items as dense vectors via ANN. Solved cold-start where collaborative filtering failed. Redis-cached embeddings, sub-50ms P99 latency.</p>
+        <h3 class="ph">Production RAG<br><em>with Continuous Eval</em></h3>
+        <p class="pb">Natural language querying over a large document corpus with cited answers. Parent-child chunking, hybrid search, re-ranking, and NLI faithfulness scoring before delivery.</p>
+        <div class="res">95% precision &middot; Hallucination &lt; 5% &middot; RAGAS</div>
+        <div class="chips"><span class="chip">LangChain</span><span class="chip">Weaviate</span><span class="chip">FAISS</span><span class="chip">RAGAS</span><span class="chip">FastAPI</span></div>
+      </div>
+      <div class="pc2">
+        <div class="pnum">03</div>
+        <h3 class="ph">Dense Retrieval<br><em>Recommendation Engine</em></h3>
+        <p class="pb">Two-tower dense retrieval: users and items as vectors via ANN. Redis-cached embeddings, sub-50ms P99. Hard-negative sampling moved ROC-AUC from 0.82 to 0.90+.</p>
         <div class="res">ROC-AUC 0.82 to 0.90+ &middot; Sub-50ms P99</div>
         <div class="chips"><span class="chip">FAISS</span><span class="chip">Pinecone</span><span class="chip">Sentence Transformers</span><span class="chip">Redis</span><span class="chip">FastAPI</span></div>
       </div>
       <div class="pc2">
-        <div class="pnum">03</div>
-        <h3 class="ph">Legal Document<br><em>Summarisation Platform</em></h3>
-        <p class="pb">Map-reduce LLM summarisation with clause-level semantic evaluation. A missed clause is a liability. Preservation measured via cosine similarity, calibrated on 50 human-labelled examples.</p>
+        <div class="pnum">04</div>
+        <h3 class="ph">LLM Summarisation<br><em>with Clause Evaluation</em></h3>
+        <p class="pb">Map-reduce LLM summarisation with clause-level semantic evaluation. Preservation measured via cosine similarity, calibrated on 50 human-labelled examples.</p>
         <div class="res">92% clause preservation &middot; Containerised</div>
         <div class="chips"><span class="chip">LangChain</span><span class="chip">Sentence Transformers</span><span class="chip">FastAPI</span><span class="chip">Docker</span></div>
-      </div>
-      <div class="pc2">
-        <div class="pnum">04&ndash;05</div>
-        <h3 class="ph">Time-Series<br><em>Forecasting Systems</em></h3>
-        <p class="pb">Stock price forecasting with Kafka streaming and Kubernetes autoscaling; AQI prediction covering 300+ Indian locations with real-time dashboards. Both cross-validated and deployed.</p>
-        <div class="res">92% CV accuracy &middot; 94% accuracy (300+ locations)</div>
-        <div class="chips"><span class="chip">XGBoost</span><span class="chip">Kafka</span><span class="chip">Kubernetes</span><span class="chip">Streamlit</span></div>
       </div>
     </div>
   </div>
@@ -403,7 +410,7 @@ footer{z-index:1;position:relative;padding:24px 52px;border-top:1px solid var(--
   <div class="wrap">
     <div class="sec-hd rv">
       <div><div class="sec-num">03 - Skills</div><h2 class="st">Technical <em>Depth</em></h2></div>
-      <div class="sec-hd-r">Visualised by actual usage depth in production systems - not self-assessed familiarity from tutorials.</div>
+      <div class="sec-hd-r">What I actually use on the systems above. Agents and RAG first, then the APIs, containers, and data layer that serve them.</div>
     </div>
     <div class="sk-wrap rv">
       <div>
@@ -411,29 +418,31 @@ footer{z-index:1;position:relative;padding:24px 52px;border-top:1px solid var(--
         <div class="sk-row"><div class="sk-top"><span class="sk-n">Python</span><span class="sk-lv">Expert</span></div><div class="sk-tr"><div class="sk-fi" data-w="96"></div></div></div>
         <div class="sk-row"><div class="sk-top"><span class="sk-n">SQL</span><span class="sk-lv">Advanced</span></div><div class="sk-tr"><div class="sk-fi" data-w="82"></div></div></div>
         <div class="sk-row"><div class="sk-top"><span class="sk-n">Bash / Shell</span><span class="sk-lv">Proficient</span></div><div class="sk-tr"><div class="sk-fi" data-w="68"></div></div></div>
-        <div class="sk-hd" style="margin-top:24px">AI / ML</div>
+        <div class="sk-hd" style="margin-top:24px">Generative AI &amp; Agents</div>
+        <div class="sk-row"><div class="sk-top"><span class="sk-n">Multi-Agent Systems &amp; Orchestration</span><span class="sk-lv">Expert</span></div><div class="sk-tr"><div class="sk-fi" data-w="95"></div></div></div>
         <div class="sk-row"><div class="sk-top"><span class="sk-n">RAG Systems &amp; LLMs</span><span class="sk-lv">Expert</span></div><div class="sk-tr"><div class="sk-fi" data-w="95"></div></div></div>
-        <div class="sk-row"><div class="sk-top"><span class="sk-n">Vector Search - FAISS, Pinecone, Weaviate</span><span class="sk-lv">Expert</span></div><div class="sk-tr"><div class="sk-fi" data-w="92"></div></div></div>
+        <div class="sk-row"><div class="sk-top"><span class="sk-n">LangGraph, LangChain &amp; MCP</span><span class="sk-lv">Expert</span></div><div class="sk-tr"><div class="sk-fi" data-w="93"></div></div></div>
+        <div class="sk-row"><div class="sk-top"><span class="sk-n">LLM Evaluation &amp; RAGAS</span><span class="sk-lv">Expert</span></div><div class="sk-tr"><div class="sk-fi" data-w="92"></div></div></div>
+        <div class="sk-row"><div class="sk-top"><span class="sk-n">Vector Search &mdash; FAISS, Pinecone, Weaviate</span><span class="sk-lv">Expert</span></div><div class="sk-tr"><div class="sk-fi" data-w="92"></div></div></div>
         <div class="sk-row"><div class="sk-top"><span class="sk-n">NLP &amp; Text Embeddings</span><span class="sk-lv">Expert</span></div><div class="sk-tr"><div class="sk-fi" data-w="90"></div></div></div>
-        <div class="sk-row"><div class="sk-top"><span class="sk-n">ML Evaluation &amp; RAGAS</span><span class="sk-lv">Expert</span></div><div class="sk-tr"><div class="sk-fi" data-w="90"></div></div></div>
-        <div class="sk-row"><div class="sk-top"><span class="sk-n">Classical ML - XGBoost, Sklearn</span><span class="sk-lv">Advanced</span></div><div class="sk-tr"><div class="sk-fi" data-w="84"></div></div></div>
-        <div class="sk-row"><div class="sk-top"><span class="sk-n">Recommendation Systems</span><span class="sk-lv">Advanced</span></div><div class="sk-tr"><div class="sk-fi" data-w="82"></div></div></div>
-        <div class="sk-row"><div class="sk-top"><span class="sk-n">Deep Learning - PyTorch, TensorFlow</span><span class="sk-lv">Advanced</span></div><div class="sk-tr"><div class="sk-fi" data-w="78"></div></div></div>
-        <div class="sk-hd" style="margin-top:24px">MLOps &amp; Infrastructure</div>
+        <div class="sk-row"><div class="sk-top"><span class="sk-n">ML System Design &amp; LLMOps</span><span class="sk-lv">Expert</span></div><div class="sk-tr"><div class="sk-fi" data-w="90"></div></div></div>
+        <div class="sk-row"><div class="sk-top"><span class="sk-n">Classical ML &mdash; XGBoost, Sklearn</span><span class="sk-lv">Advanced</span></div><div class="sk-tr"><div class="sk-fi" data-w="84"></div></div></div>
+        <div class="sk-row"><div class="sk-top"><span class="sk-n">Deep Learning &mdash; PyTorch, TensorFlow</span><span class="sk-lv">Advanced</span></div><div class="sk-tr"><div class="sk-fi" data-w="78"></div></div></div>
+        <div class="sk-hd" style="margin-top:24px">Engineering &amp; Infrastructure</div>
         <div class="sk-row"><div class="sk-top"><span class="sk-n">FastAPI &amp; REST API Design</span><span class="sk-lv">Expert</span></div><div class="sk-tr"><div class="sk-fi" data-w="93"></div></div></div>
         <div class="sk-row"><div class="sk-top"><span class="sk-n">Docker &amp; Kubernetes</span><span class="sk-lv">Advanced</span></div><div class="sk-tr"><div class="sk-fi" data-w="83"></div></div></div>
-        <div class="sk-row"><div class="sk-top"><span class="sk-n">CI/CD, GitHub Actions</span><span class="sk-lv">Advanced</span></div><div class="sk-tr"><div class="sk-fi" data-w="78"></div></div></div>
-        <div class="sk-row"><div class="sk-top"><span class="sk-n">Prometheus, Grafana, MLflow</span><span class="sk-lv">Proficient</span></div><div class="sk-tr"><div class="sk-fi" data-w="72"></div></div></div>
-        <div class="sk-row"><div class="sk-top"><span class="sk-n">Cloud - AWS, GCP, Azure</span><span class="sk-lv">Proficient</span></div><div class="sk-tr"><div class="sk-fi" data-w="70"></div></div></div>
-        <div class="sk-hd" style="margin-top:24px">GenAI Frameworks</div>
-        <div class="chips"><span class="chip">LangChain</span><span class="chip">LlamaIndex</span><span class="chip">LangGraph</span><span class="chip">HuggingFace</span><span class="chip">RAGAS</span><span class="chip">Sentence Transformers</span><span class="chip">Ollama</span><span class="chip">OpenAI API</span><span class="chip">Anthropic API</span><span class="chip">Chroma</span></div>
-        <div class="sk-hd" style="margin-top:20px">Data Engineering</div>
-        <div class="chips"><span class="chip">Kafka</span><span class="chip">Airflow</span><span class="chip">Snowflake</span><span class="chip">PySpark</span><span class="chip">dbt</span><span class="chip">PostgreSQL</span><span class="chip">MongoDB</span><span class="chip">Redis</span><span class="chip">Pandas</span><span class="chip">NumPy</span></div>
+        <div class="sk-row"><div class="sk-top"><span class="sk-n">CI/CD, Git, GitHub Actions</span><span class="sk-lv">Advanced</span></div><div class="sk-tr"><div class="sk-fi" data-w="80"></div></div></div>
+        <div class="sk-row"><div class="sk-top"><span class="sk-n">Observability &mdash; Prometheus, Grafana, MLflow</span><span class="sk-lv">Proficient</span></div><div class="sk-tr"><div class="sk-fi" data-w="72"></div></div></div>
+        <div class="sk-row"><div class="sk-top"><span class="sk-n">Cloud &mdash; AWS, GCP, Azure</span><span class="sk-lv">Proficient</span></div><div class="sk-tr"><div class="sk-fi" data-w="70"></div></div></div>
+        <div class="sk-hd" style="margin-top:24px">Gen AI Stack</div>
+        <div class="chips"><span class="chip hi">LangGraph</span><span class="chip hi">MCP</span><span class="chip hi">Multi-Agent Systems</span><span class="chip hi">LangChain</span><span class="chip">LlamaIndex</span><span class="chip">RAGAS</span><span class="chip">HuggingFace</span><span class="chip">OpenAI API</span><span class="chip">Anthropic API</span><span class="chip">Gemini</span><span class="chip">Ollama</span><span class="chip">Sentence Transformers</span></div>
+        <div class="sk-hd" style="margin-top:20px">Core Engineering</div>
+        <div class="chips"><span class="chip">System Design</span><span class="chip">Microservices</span><span class="chip">REST APIs</span><span class="chip">Testing</span><span class="chip">Git</span><span class="chip">CI/CD</span><span class="chip">Linux</span><span class="chip">PostgreSQL</span><span class="chip">Redis</span><span class="chip">Kafka</span><span class="chip">Airflow</span><span class="chip">PySpark</span><span class="chip">Pandas</span><span class="chip">NumPy</span></div>
       </div>
       <div>
         <div style="background:var(--ink2);border:1px solid var(--rule);padding:22px;margin-bottom:22px;display:flex;justify-content:center"><canvas id="radar"></canvas></div>
         <div style="background:var(--ink2);border:1px solid var(--rule);padding:18px 22px;margin-bottom:22px">
-          <div class="sk-hd" style="margin-bottom:16px">Experience by Domain</div>
+          <div class="sk-hd" style="margin-bottom:16px">Experience by Focus</div>
           <canvas id="domainChart" style="width:100%;display:block"></canvas>
         </div>
         <div class="sk-hd">Certifications</div>
@@ -452,7 +461,7 @@ footer{z-index:1;position:relative;padding:24px 52px;border-top:1px solid var(--
       <div class="edu-grid">
         <div class="edu-blk"><div class="edu-lbl">Degree</div><p><strong>B.Tech, Computer Science &amp; Engineering</strong><br>Modern Institute of Technology &amp; Research Centre, Alwar<br>2018 &ndash; 2022 &middot; CGPA <strong>8.95 / 10</strong></p></div>
         <div class="edu-blk"><div class="edu-lbl">Academic Standing</div><p>CGPA 8.95 within the top percentile of the graduating cohort. Strong foundation in algorithms, data structures, applied mathematics, and distributed systems.</p></div>
-        <div class="edu-blk"><div class="edu-lbl">International Recognition</div><p>Degree recognised at <strong>H+ level on the German Anabin database</strong>. Qualifies for <strong>EU Blue Card in Germany, </strong><strong>Global Talent Stream(GTS) and Express Entry in Canada</strong> and <strong>Skilled Worker Visa across the EU and UK.</strong> Open to relocation. Visa sponsorship required.</p></div>
+        <div class="edu-blk"><div class="edu-lbl">International Recognition</div><p>Degree recognised at <strong>H+ level on the German Anabin database</strong>. Qualifies for <strong>EU Blue Card in Germany</strong>, <strong>Global Talent Stream (GTS) and Express Entry in Canada</strong>, and <strong>Skilled Worker routes in the EU and UK</strong>. Open to <strong>relocation and remote work</strong>, including US-based roles. Visa sponsorship required.</p></div>
       </div>
     </div>
   </div>
@@ -462,26 +471,71 @@ footer{z-index:1;position:relative;padding:24px 52px;border-top:1px solid var(--
   <div class="wrap">
     <div class="sec-hd rv">
       <div><div class="sec-num">04 - Writing</div><h2 class="st">Blog &amp; <em>Publications</em></h2></div>
-      <div class="sec-hd-r">Technical writing on applied ML - production trade-offs, evaluation methodology, and honest accounts of what the numbers mean.</div>
+      <div class="sec-hd-r">I write for Towards Data Science about the same problems I hit at work: when one agent is not enough, how MCP cleaned up tool definitions, why judges agree with themselves, and what a 3&times; token bill looks like once a graph is in production.</div>
     </div>
     <div class="wgrid">
       <div class="ac rv">
-        <div class="a-tag">Published &middot; Medium &middot; Jul 2024</div>
-        <h3 class="a-ttl">Predicting Air Quality with Machine Learning</h3>
-        <p class="a-exc">A complete walkthrough of building a 94%-accurate AQI system for 300+ Indian locations - feature engineering, model selection, and what working with real government monitoring data actually looks like.</p>
-        <a href="https://medium.com/@PriyanshBh/df59902566fc" target="_blank" class="a-lnk">Read on Medium &#8594;</a>
+        <div class="a-pub">Towards Data Science</div>
+        <div class="a-date">28 Aug 2026</div>
+        <h3 class="a-ttl">Human-in-the-Loop Without Killing Throughput</h3>
+        <p class="a-exc">Risk-based routing for agent actions: score blast radius, table sensitivity, novelty, and resample disagreement so humans only see the work that actually needs them.</p>
+        <a href="https://towardsdatascience.com/human-in-the-loop-without-killing-throughput/" target="_blank" rel="noopener" class="a-lnk">Read on TDS &#8594;</a>
       </div>
       <div class="ac rv d1">
-        <div class="a-tag">Published &middot; TDS &middot; April 2026</div>
-        <h3 class="a-ttl">Grounding Your LLM: A Practical Guide to RAG for Enterprise Knowledge Bases</h3>
-        <p class="a-exc">What a successful RAG demo hides - and what breaks the moment someone asks about real company data. A production walkthrough from architecture to the evaluation step most teams skip entirely.</p>
-        <a href="https://towardsdatascience.com/grounding-your-llm-a-practical-guide-to-rag-for-enterprise-knowledge-bases/" target="_blank" class="a-lnk">Read on Towards Data Science (TDS) &#8594;</a>
+        <div class="a-pub">Towards Data Science</div>
+        <div class="a-date">20 Aug 2026</div>
+        <h3 class="a-ttl">The LLM Judge That Kept Agreeing With Itself</h3>
+        <p class="a-exc">Self-preference bias in LLM-as-judge: why a generator and judge from the same model family approve each other, and how to calibrate against humans.</p>
+        <a href="https://towardsdatascience.com/the-llm-judge-that-kept-agreeing-with-itself/" target="_blank" rel="noopener" class="a-lnk">Read on TDS &#8594;</a>
       </div>
       <div class="ac rv d2">
-        <div class="a-tag">Published &middot; TDS &middot; April 2026</div>
+        <div class="a-pub">Towards Data Science</div>
+        <div class="a-date">31 Jul 2026</div>
+        <h3 class="a-ttl">The 3&times; Token Bill We Didn&rsquo;t See Coming</h3>
+        <p class="a-exc">How a multi-agent graph tripled LLM cost through silent retries and bloated handoffs &mdash; and the routing, context trim, and parallelism that brought it down.</p>
+        <a href="https://towardsdatascience.com/the-3x-token-bill-we-didnt-see-coming/" target="_blank" rel="noopener" class="a-lnk">Read on TDS &#8594;</a>
+      </div>
+      <div class="ac rv">
+        <div class="a-pub">Towards Data Science</div>
+        <div class="a-date">15 Jul 2026</div>
+        <h3 class="a-ttl">Building Trustworthy Production RAG Through Continuous Evaluation</h3>
+        <p class="a-exc">Golden sets, RAGAS, custom judges, and CI gates: an evaluation workflow that catches retrieval failure, hallucination, and drift before users do.</p>
+        <a href="https://towardsdatascience.com/building-trustworthy-production-rag-systems-through-continuous-evaluation/" target="_blank" rel="noopener" class="a-lnk">Read on TDS &#8594;</a>
+      </div>
+      <div class="ac rv d1">
+        <div class="a-pub">Towards Data Science</div>
+        <div class="a-date">24 Jun 2026</div>
+        <h3 class="a-ttl">Why I Stopped Using One Agent and Built a Multi-Agent Pipeline Instead</h3>
+        <p class="a-exc">When a single agent collapses under compound tasks. Specialised agents, LangGraph orchestration, and when not to use a multi-agent design.</p>
+        <a href="https://towardsdatascience.com/why-i-stopped-using-one-agent-and-built-a-multi-agent-pipeline-instead/" target="_blank" rel="noopener" class="a-lnk">Read on TDS &#8594;</a>
+      </div>
+      <div class="ac rv d2">
+        <div class="a-pub">Towards Data Science</div>
+        <div class="a-date">15 Jun 2026</div>
+        <h3 class="a-ttl">The Protocol That Cleaned Up Our Agent Architecture</h3>
+        <p class="a-exc">Moving tools out of the orchestrator onto MCP: one server, discoverable schemas, and human-in-the-loop at the protocol boundary.</p>
+        <a href="https://towardsdatascience.com/the-protocol-that-cleaned-up-our-agent-architecture/" target="_blank" rel="noopener" class="a-lnk">Read on TDS &#8594;</a>
+      </div>
+      <div class="ac rv">
+        <div class="a-pub">Towards Data Science</div>
+        <div class="a-date">12 May 2026</div>
+        <h3 class="a-ttl">Hybrid Search and Re-Ranking in Production RAG</h3>
+        <p class="a-exc">When dense retrieval ranks the right document eleventh. BM25 plus vectors, cross-encoder re-ranking, and measuring the lift with RAGAS.</p>
+        <a href="https://towardsdatascience.com/hybrid-search-and-re-ranking-in-production-rag/" target="_blank" rel="noopener" class="a-lnk">Read on TDS &#8594;</a>
+      </div>
+      <div class="ac rv d1">
+        <div class="a-pub">Towards Data Science</div>
+        <div class="a-date">Apr 2026</div>
         <h3 class="a-ttl">Your Chunks Failed Your RAG in Production</h3>
-        <p class="a-exc">A post-mortem on a specific chunking failure in production - what went wrong, why it passed testing, and what the fix actually looked like. The kind of thing you only learn by shipping, not by reading docs.</p>
-        <a href="https://towardsdatascience.com/your-chunks-failed-your-rag-in-production/" target="_blank" class="a-lnk">Read on Towards Data Science (TDS) &#8594;</a>
+        <p class="a-exc">A post-mortem on a chunking failure that passed testing: what broke, why the eval set missed it, and what the fix actually looked like.</p>
+        <a href="https://towardsdatascience.com/your-chunks-failed-your-rag-in-production/" target="_blank" rel="noopener" class="a-lnk">Read on TDS &#8594;</a>
+      </div>
+      <div class="ac rv d2">
+        <div class="a-pub">Towards Data Science</div>
+        <div class="a-date">Apr 2026</div>
+        <h3 class="a-ttl">Grounding Your LLM: A Practical Guide to RAG for Enterprise Knowledge Bases</h3>
+        <p class="a-exc">What a successful RAG demo hides &mdash; and what breaks the moment someone asks about real company data. Architecture through the evaluation step most teams skip.</p>
+        <a href="https://towardsdatascience.com/grounding-your-llm-a-practical-guide-to-rag-for-enterprise-knowledge-bases/" target="_blank" rel="noopener" class="a-lnk">Read on TDS &#8594;</a>
       </div>
     </div>
   </div>
@@ -491,17 +545,17 @@ footer{z-index:1;position:relative;padding:24px 52px;border-top:1px solid var(--
   <div class="wrap">
     <div class="sec-hd rv">
       <div><div class="sec-num">05 - Contact</div><h2 class="st">Let's <em>Connect</em></h2></div>
-      <div class="sec-hd-r">Open to senior AI/GenAI Engineering roles in Canada, EU and UK. Interested in teams where evaluation rigour and production reliability are first-class concerns.</div>
+      <div class="sec-hd-r">I am looking at senior AI engineering roles in the US, Canada, the EU, and the UK, including remote. If the work involves agents, RAG, or getting an LLM system into production, that is the conversation I want.</div>
     </div>
     <div class="ct-grid rv">
       <div>
         <h3 class="ct-h">Available for <em>new opportunities</em></h3>
-        <p class="ct-p">Actively looking for senior AI or Gen AI Engineering roles in Germany, Canada, the Netherlands, the UK, and the EU broadly. Happy to talk through relocation timelines, visa support, and what the day-to-day looks like before either of us commits.</p>
+        <p class="ct-p">Looking at senior AI / Gen AI engineering roles in the US, Canada, the UK, Germany, the Netherlands, and the wider EU &mdash; including remote. Relocation and visa timelines are fine to discuss early.</p>
         <ul class="ct-list">
-          <li class="ct-i"><span class="ct-ico">in</span><span class="ct-txt"><a href="https://linkedin.com/in/priyansh-bhardwaj-25964317a" target="_blank">linkedin.com/in/priyansh-bhardwaj</a></span></li>
-          <li class="ct-i"><span class="ct-ico">gh</span><span class="ct-txt"><a href="https://github.com/PriyanshBhardwaj" target="_blank">github.com/PriyanshBhardwaj</a></span></li>
+          <li class="ct-i"><span class="ct-ico">in</span><span class="ct-txt"><a href="https://linkedin.com/in/priyansh-bhardwaj-25964317a" target="_blank" rel="noopener">linkedin.com/in/priyansh-bhardwaj</a></span></li>
+          <li class="ct-i"><span class="ct-ico">gh</span><span class="ct-txt"><a href="https://github.com/PriyanshBhardwaj" target="_blank" rel="noopener">github.com/PriyanshBhardwaj</a></span></li>
           <li class="ct-i"><span class="ct-ico">&#9096;</span><span class="ct-txt">Gurugram, Haryana, India</span></li>
-          <li class="ct-i"><span class="ct-ico">&#9992;</span><span class="ct-txt">Open to relocation &middot; EU, Canada &amp; UK &middot; Visa sponsorship required</span></li>
+          <li class="ct-i"><span class="ct-ico">&#9992;</span><span class="ct-txt">US, EU, Canada &amp; UK &middot; Remote welcome &middot; Visa sponsorship required</span></li>
         </ul>
       </div>
       <form class="cf" id="cform" action="https://formspree.io/f/xgongjyn" method="POST">
@@ -519,11 +573,11 @@ footer{z-index:1;position:relative;padding:24px 52px;border-top:1px solid var(--
 </section>
 
 <footer>
-  <span class="fc">&#169; 2026 Priyansh Bhardwaj &middot; AI Engineer &middot; Gurugram, Haryana, India</span>
+  <span class="fc">&#169; 2026 Priyansh Bhardwaj &middot; Senior AI Engineer &middot; Gurugram</span>
   <div class="flinks">
-    <a href="https://linkedin.com/in/priyansh-bhardwaj-25964317a" target="_blank">LinkedIn</a>
-    <a href="https://github.com/PriyanshBhardwaj" target="_blank">GitHub</a>
-    <a href="https://towardsdatascience.com/author/priyansh-bhardwaj/" target="_blank">Towards Data Science (TDS)</a>
+    <a href="https://linkedin.com/in/priyansh-bhardwaj-25964317a" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/PriyanshBhardwaj" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://towardsdatascience.com/author/priyansh.bhardwaj/" target="_blank" rel="noopener">Towards Data Science</a>
     <!-- <a onclick="doEmail()">Email</a> -->
   </div>
 </footer>
@@ -652,9 +706,9 @@ footer{z-index:1;position:relative;padding:24px 52px;border-top:1px solid var(--
   function drawRadar() {
     var el = document.getElementById('radar'); if (!el) return;
     var sz = Math.min(el.parentElement.clientWidth - 44, 320); el.width = sz; el.height = sz;
-    var rc = el.getContext('2d'), cx = sz / 2, cy = sz / 2, R = sz * 0.32;
-    var cats = ['RAG/LLMs', 'Vector DB', 'NLP', 'MLOps', 'RecSys', 'Deep Learning'];
-    var vals = [0.95, 0.92, 0.90, 0.83, 0.82, 0.78], N = cats.length, i, a;
+    var rc = el.getContext('2d'), cx = sz / 2, cy = sz / 2, R = sz * 0.30;
+    var cats = ['Agents', 'RAG/LLMs', 'MCP/Tools', 'Eval', 'MLOps', 'Systems'];
+    var vals = [0.95, 0.95, 0.93, 0.92, 0.83, 0.88], N = cats.length, i, a;
     [0.25, 0.5, 0.75, 1].forEach(function (r) {
       rc.beginPath();
       for (i = 0; i < N; i++) { a = (i/N)*2*Math.PI - Math.PI/2; if (i===0) rc.moveTo(cx+R*r*Math.cos(a),cy+R*r*Math.sin(a)); else rc.lineTo(cx+R*r*Math.cos(a),cy+R*r*Math.sin(a)); }
@@ -675,18 +729,18 @@ footer{z-index:1;position:relative;padding:24px 52px;border-top:1px solid var(--
     var el = document.getElementById('domainChart');
     if (!el) return;
     var pw = el.parentElement.clientWidth - 44;
-    el.width = pw; el.height = 160;
+    el.width = pw; el.height = 176;
     var rc = el.getContext('2d');
     var data = [
-      { label: 'GenAI / RAG',    val: 0.95, sub: 'Dunnhumby + Independent' },
-      { label: 'MLOps',          val: 0.85, sub: 'All roles' },
-      { label: 'NLP / Embeddings',val: 0.90, sub: 'Independent' },
-      { label: 'Rec Systems',    val: 0.75, sub: 'Independent' },
-      { label: 'Fintech / Fraud',val: 0.70, sub: 'Signzy' }
+      { label: 'Agents / MCP',     val: 0.95, sub: 'Dunnhumby + GARRICK' },
+      { label: 'GenAI / RAG',      val: 0.95, sub: 'Production systems' },
+      { label: 'LLMOps / Eval',    val: 0.90, sub: 'RAGAS + judges' },
+      { label: 'ML Systems',       val: 0.85, sub: 'Serving + MLOps' },
+      { label: 'Classical ML',     val: 0.72, sub: 'Earlier roles' }
     ];
     var N = data.length;
     var rowH = 26, gap = 6, top = 8;
-    var labelW = 130, barX = labelW + 10, barW = pw - labelW - 60;
+    var labelW = 118, barX = labelW + 8, barW = pw - labelW - 58;
     for (var i = 0; i < N; i++) {
       var y = top + i * (rowH + gap);
       rc.font = '300 11px Fira Code, monospace';
